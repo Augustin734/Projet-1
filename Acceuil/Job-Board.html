@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <title>Titre de la page</title>
   <li></li><a href="Menu Connexion.html">Connexion</a></li>
-  <link rel="stylesheet" href="style.css">
-  <script src="test.js"></script>
+  <a href="Menu Inscription.html" class="formation-link">Inscription</a>
+  <link rel="stylesheet" href="xxxxx.css">
+  <script src="xxxxx.js"></script>
 </head>
 <body>
 <section id="JobAdverts">
@@ -17,7 +18,7 @@
         <h3>Recherche Developper en C et en C++</h3>
         <h3>CoreSyntax Systèmes</h3>
         <p>CDI</p>
-        <a href="C++.html" class="formation-link">learn more</a>
+        <a href="Emploie CoreSyntax.html" class="formation-link">learn more</a>
       </div>
     </div>
 <br>
@@ -26,7 +27,7 @@
         <h3>Recherche Developper Web </h3>
         <h3>PixelForge Interactive</h3>
         <p>Cybersécurité, Informatique, Électronique et Logiciel</p>
-        <a href="Dev WEB.html" class="formation-link">learn more</a>
+        <a href="Emploie PixelForge.html" class="formation-link">learn more</a>
       </div>
     </div>
 <br>
@@ -45,23 +46,5 @@
  <footer>
     <p>© 2025 - Tous droits réservés</p>
   </footer>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll(".timeline-item");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    items.forEach(item => observer.observe(item));
-  });
-</script>
-
-
-  
 </body>
 </html>
