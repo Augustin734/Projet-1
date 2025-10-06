@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Page</title>
+    <link href="Menu Connexion.js">
+</head>
+<body>
+
+<form id="formAnnonce">
+    <h1>Connexion</h1>
+<label>Fonction:</label>
+    <input type="radio" name="sex" checked> Job seeker
+    <input type="radio"  name="sex"> Employer<br><br>
+
+    <label>Name:</label>
+    <input type="text" required><br><br>
+
+    <label>First-Name:</label>
+    <input type="text" required><br><br>
+
+    <label>Email:</label>
+    <input type="email" required><br><br>
+
+    <label>Age:</label>
+    <input type="number" id="age" min="16" max="99" required><br><br>
+
+    <label>Phone:</label>
+    <input type="text" minlength="14" maxlength="14" required><br><br>
+
+      <label for="entreprise">Company name</label>
+      <input type="text" id="entreprise" name="entreprise" required>
+
+   
+  <br> <br> <label for="titre">Job title</label>
+    <input type="text" id="titre" name="titre" required>
+   
+   
+    <br>  <br><label for="lieu">Localisation</label>
+    <input type="text" id="lieu" name="lieu" required>
+
+   <br> <br> <label for="type">Contract type</label>
+    <select id="type" name="type">
+      <option value="CDI">CDI</option>
+      <option value="CDD">CDD</option>
+      <option value="Alternance">Alternance</option>
+      <option value="Stage">Stage</option>
+      
+    </select>
+
+   <br> <br> <label for="email">Contact email</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

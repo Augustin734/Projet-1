@@ -7,15 +7,14 @@
   <script src="test.js"></script>
 </head>
 <body>
- 
-<section id="Annoces">
-  <h2>Annoces d'Emploies</h2>
+<section id="JobAdverts">
+  <h2>Job adverts</h2>
   <div class="timeline">
 
     <div class="timeline-item" >
       <div class="timeline-content">
         <h3>Recherche Developper en C et en C++</h3>
-        <h3>Nom de l'entreprise</h3>
+        <h3>CoreSyntax Systèmes</h3>
         <p>CDI</p>
         <a href="C++.html" class="formation-link">learn more</a>
       </div>
@@ -24,23 +23,42 @@
     <div class="timeline-item">
       <div class="timeline-content">
         <h3>Recherche Developper Web </h3>
-        <h3>Nom de l'entreprise</h3>
+        <h3>PixelForge Interactive</h3>
         <p>Cybersécurité, Informatique, Électronique et Logiciel</p>
-        <a href= class="formation-link">learn more</a>
+        <a href="Dev WEB.html" class="formation-link">learn more</a>
       </div>
     </div>
 <br>
     <div class="timeline-item">
       <div class="timeline-content">
-        <h3>Juin 2023 • Baccalauréat Professionnel</h3>
-        <p>« Systèmes numériques » option RISC (Réseaux informatiques et systèmes communicants) – Mention Assez Bien</p>
-        <a href="" class="formation-link">learn more</a>
+        <h3>Recherche Développeur en Systèmes Numériques</h3>
+        <h3>Nom de l'entreprise</h3>
+        <p>CDI en language</p>
+        <a href= class="formation-link">learn more</a>
       </div>
     </div>
 
   </div>
 </section>
 <br>
+ <footer>
+    <p>© 2025 - Tous droits réservés</p>
+  </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".timeline-item");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => observer.observe(item));
+  });
+</script>
 
 
   

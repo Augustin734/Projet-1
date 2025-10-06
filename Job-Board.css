@@ -7,26 +7,4 @@
         margin: 0.5rem 0;
     }
 }
-/*Learning More Button*/
-.learn-more-btn {   
-    background-color: #ffcc00;
-    color: #222;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 1rem;
-}
-.learn-more-btn:hover {
-    background-color: #222;
-    color: #ffcc00;
-}
-.learn-more-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-.learn-more-content.active {
-    max-height: 500px; /* Ajustez cette valeur en fonction de la taille du contenu */
-}
+
