@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="Job-Board.css">
+    <link rel="stylesheet" href="inscription.css.css">
 </head>
 <body>
-<a href="Menu Connexion.html" class="formation-link">Back</a>
+<a href="../connexion/Menu_Connexion.html" class="formation-link">Back</a>
 
 <center><form id="formAnnonce">
         
@@ -34,6 +34,14 @@
 
 <label>Phone:</label>
 <input type="text" minlength="10" maxlength="14" required><br><br>
+
+<label>Password:</label>
+    <input type="password" required
+    minlength="8"
+       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+       title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">
+    <br><br>
+
 </div>
            
 <div class="employer-section">
@@ -51,7 +59,9 @@
 <input type="number" id="age" min="16" max="99" required><br><br>
 
 <label>Phone:</label>
-<input type="text" minlength="10" maxlength="14" required><br><br>
+<input type="text" minlength="10" maxlength="14" required
+pattern="[0-9]{10,14}">
+<br><br>
 
 <label for="entreprise">Company name</label>
 <input type="text" id="entreprise" name="entreprise" required><br><br>
@@ -72,6 +82,9 @@
     <label for="titre">Job title</label>
     <input type="text" id="titre" name="titre" required><br><br>
 
+    <label>Descriptif</label><br>
+    <textarea style="width: 547px; height:84px;" maxlength="300"></textarea><br><br>
+
     <label for="lieu">Localisation</label>
     <input type="text" id="lieu" name="lieu" required><br><br>
 
@@ -85,10 +98,18 @@
 
   <label for="email">Contact email</label>
   <input type="email" id="email" name="email" required><br><br>
+
+<label>Password:</label>
+    <input type="password" id="password" required 
+       minlength="8"
+       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+       title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">
+<br><br>
+
   </div>
 <button type="submit">Submit</button>
   </form>
   </center>
- <br> <br>  <center><a href="Job-Board.html" class="formation-link">Back to Home Page</a></center>
+ <br> <br>  <center><a href="../../JB/jb.html" class="formation-link">Back to Home Page</a></center>
 </body>
 </html>
