@@ -1,0 +1,9 @@
+Etape 1: 
+Installer "Docker Desktop"
+
+Etape 2:
+Ouvrir le terminal wsl et run la commande :
+docker compose up -d --build
+
+Etape 3:
+click sur -> http://localhost:3000
