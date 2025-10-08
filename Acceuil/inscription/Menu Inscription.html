@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="inscription.css.css">
+    <link rel="stylesheet" href="../../JB/jb.css">
 </head>
 <body>
+  <main class="container"> 
 <a href="../connexion/Menu_Connexion.html" class="formation-link">Back</a>
 
 <center><form id="formAnnonce">
@@ -33,7 +35,9 @@
 <input type="number" id="age" min="16" max="99" required><br><br>
 
 <label>Phone:</label>
-<input type="text" minlength="10" maxlength="14" required><br><br>
+<input type="text" minlength="10" maxlength="14" required
+pattern="[0-9]{10,14}">
+<br><br>
 
 <label>Password:</label>
     <input type="password" required
@@ -111,5 +115,6 @@ pattern="[0-9]{10,14}">
   </form>
   </center>
  <br> <br>  <center><a href="../../JB/jb.html" class="formation-link">Back to Home Page</a></center>
+  </main>
 </body>
 </html>
