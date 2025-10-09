@@ -12,6 +12,8 @@ Pour afficher la base de donnée:
 click sur -> http://localhost:5050
 nom utilisateur : augustin.viemont@epitech.eu
 mdp : viemont
+
+\* Pour la première connexion */
 click droit sur servers
 click droit sur register
 Server ...

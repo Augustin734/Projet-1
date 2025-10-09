@@ -1,31 +1,30 @@
-import express from "express";
-import pkg from "pg";
+// index.js
+import express from 'express';
+import pkg from 'pg';
 const { Pool } = pkg;
 
+// Création de l'application Express
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
+// Middleware pour parser le JSON
+app.use(express.json());
+
+// Configuration de la connexion PostgreSQL
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
+  host: 'db',
+  port: 5432,
+  user: 'devuser',
+  password: 'devpass',
+  database: 'devdb1'
 });
 
-app.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT NOW()");
-    res.json({
-      message: "Connexion PostgreSQL réussie 🎉",
-      time: result.rows[0].now,
-    });
-  } catch (err) {
-    console.error("Erreur de connexion :", err);
-    res.status(500).json({ error: "Impossible de se connecter à la base" });
-  }
-});
+// Vérification de la connexion à PostgreSQL
+pool.connect()
+  .then(() => console.log('Connecté à PostgreSQL'))
+  .catch(err => console.error('Erreur de connexion à PostgreSQL :', err));
 
+// Lancement du serveur
 app.listen(port, () => {
-  console.log(`✅ Serveur Node en écoute sur le port ${port}`);
+  console.log(`Serveur lancé sur http://localhost:${port}`);
 });
