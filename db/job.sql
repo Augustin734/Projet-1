@@ -8,5 +8,5 @@ CREATE TABLE job (
     ville VARCHAR(50),
     adresse TEXT,
     date_de_postulation DATE NOT NULL,
-    descriptif TEXT
+    descriptif TEXT NOT NULL
 );

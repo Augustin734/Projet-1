@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: devuser
       POSTGRES_PASSWORD: devpass
-      POSTGRES_DB: devdb
+      POSTGRES_DB: devdb1
     ports:
       - "5432:5432"
     volumes:
@@ -35,6 +35,19 @@ services:
     networks:
       - devnet
     command: npm start
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: augustin.viemont@epitech.eu
+      PGADMIN_DEFAULT_PASSWORD: viemont
+    ports:
+      - "5050:80"
+    networks:
+      - devnet
+    depends_on:
+      - db
 
 volumes:
   db_data:
