@@ -11,3 +11,5 @@ COPY backend/ .
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
+COPY db/db.sql /docker-entrypoint-initdb.d/
