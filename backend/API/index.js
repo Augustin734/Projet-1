@@ -1,10 +1,10 @@
 import express from 'express';
 import pkg from 'pg';
-import user from "./user.js";
+import user from "./API/user.js";
 
 const { Pool } = pkg;
 
-// Configuration de la connexion PostgreSQL
+            // Configuration de la connexion PostgreSQL
 const pool = new Pool({
   host: 'db',
   port: 5432,
@@ -13,15 +13,15 @@ const pool = new Pool({
   database: 'devdb'
 });
 
-// Création de l'application Express
+            // Création de l'application Express
 const app = express();
 const port = 3000;
  
-// Middleware pour parser le JSON
+            // Middleware pour parser le JSON
 app.use(express.json());
 app.use(cors());
 
-// Vérification de la connexion à PostgreSQL
+            // Vérification de la connexion à PostgreSQL
 pool.connect()
   .then(() => console.log('Connecté à PostgreSQL'))
   .catch(err => console.error('Erreur de connexion à PostgreSQL :', err));
@@ -30,12 +30,15 @@ app.get('/', (req, res) => {
   res.send('Bienvenue sur mon API Node.js ! 🚀');
 });
 
-// Lancement du serveur
+            // Lancement du serveur
 app.listen(port, () => {
   console.log(`Serveur lancé sur http://localhost:${port}`);
 });
 
-// récupérer tous les utilisateurs 
+             // way
+app.user("./api", user);
+
+            // récupérer tous les utilisateurs 
 
 app.get("/users", async (req, res) => {
   try {
