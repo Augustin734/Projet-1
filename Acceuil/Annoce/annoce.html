@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Annonce d'Emploi</title>
+    <link rel="stylesheet" href="annoce.css">
+</head>
+<body>
+    <header>
+        <h1>Nom de l'Entreprise</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Poste à pourvoir</h2>
+            <h3>Nom du Poste</h3>
+            <input type="text" placeholder="Intitulé du poste" required><br><br>
+            
+            <article>
+                <h4>Type de Contrat</h4>
+      <select id="type" name="type">
+        <option value="CDI">CDI</option>
+        <option value="CDD">CDD</option>
+        <option value="Freelance">Freelance</option>
+        <option value="Alternance">Alternance</option>
+        <option value="Stage">Stage</option>
+      </select><br><br>
+            </article>
+
+            <article>
+                <h4>Descriptif du poste</h4>
+                <textarea style="width: 547px; height:84px;" maxlength="300"></textarea><br><br>
+            </article>
+
+            <article>
+                <h4>Durée (si contrat autre que CDI)</h4>
+                <select id="duree" name="duree">
+                    <option value="3 mois">3 mois</option>
+                    <option value="6 mois">6 mois</option>
+                    <option value="12 mois">12 mois</option>
+                </select>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+      <br> <p>Contact : recrutement@entreprise.com</p>
+    </footer>
+ <br>   <button type="submit">Déposer l'annonce</button>
+ <form action="../../JB/jb.html"></form>
+</body>
+</html>
