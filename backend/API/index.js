@@ -2,7 +2,7 @@ import express from 'express';
 import pkg from 'pg';
 
 import user from "./API/user.js";
-import error from '../middleware/error.js';
+import some_error from '../middleware/error.js';
 const { Pool } = pkg;
 
             // Configuration de la connexion PostgreSQL
@@ -40,7 +40,7 @@ app.listen(port, () => {
 app.use("./api", user);
 
             // Error
-app.use (error);
+app.use (some_error);
 
             // récupérer tous les utilisateurs 
 

@@ -3,9 +3,9 @@ const some_error = (err, req, res, next) => {
     res.send(500).json({
         status:500,
         message : "Oups a problem appeared ",
-        error : err.message ,
+        some_error : err.message ,
         
     });
 };
 
-export default error;
+export default some_error;
