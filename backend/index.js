@@ -44,9 +44,9 @@ app.get("./users", async (req, res) =>{
     if (result.rows.lenngth === 0) return res.send("no user find.");
         
     //Créé un texte regroupant tout les message
-    const messages = result.rows.map(u => '${u.name} dit : ${u.message}.join();
+    const messages = result.rows.map(u => '${u.name} dit : ${u.message}.join()';
       res.send(messages))
-  }catch (err){
+  } catch (err){
     console.error(err);
     res.status(500).send ("Error server");
   }
