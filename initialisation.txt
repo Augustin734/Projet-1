@@ -1,0 +1,25 @@
+Etape 1: 
+Installer "Docker Desktop"
+
+Etape 2:
+Ouvrir le terminal wsl et run la commande :
+docker compose up -d --build
+
+Pour afficher l'index.html:
+click sur -> http://localhost:3000
+
+Pour afficher la base de donnée:
+click sur -> http://localhost:5050
+nom utilisateur : augustin.viemont@epitech.eu
+mdp : viemont
+
+\* Pour la première connexion */
+click droit sur servers
+click droit sur register
+Server ...
+name = postgres-db
+click sur connection
+Host name/adress = db
+Port = 5432
+Username = devuser
+MDP = devpass
