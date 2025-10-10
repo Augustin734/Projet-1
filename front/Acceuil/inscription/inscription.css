@@ -1,11 +1,38 @@
+/* ----- Structure générale ----- */
 body {
     font-family: Arial, sans-serif;
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-/* Masquer les sections par défaut */
+/* Conteneur principal */
+.container {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ----- Liens ----- */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* ----- Titres ----- */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+/* ----- Gestion des sections ----- */
 .jobseeker-section,
 .employer-section {
     display: none;
@@ -24,6 +51,7 @@ body {
     display: block;
 }
 
+/* ----- Champs de formulaire ----- */
 .form-group {
     margin-bottom: 15px;
 }
@@ -31,36 +59,64 @@ body {
 label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="number"],
-select {
+input[type="password"],
+select,
+textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
     margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
-button[type="submitBtn"] {
-    padding: 10px 20px;
+/* Radios */
+input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+/* ----- Bouton ----- */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
     background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-button[type="submitBtn"]:hover {
+button:hover {
     background-color: #45a049;
 }
 
+/* ----- Liens secondaires ----- */
+.formation-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* ----- Responsive design ----- */
 @media (max-width: 812px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+    body {
+        margin: 20px;
+        padding: 15px;
     }
-    nav ul li {
-        margin: 0.5rem 0;
+    .container {
+        padding: 20px;
+    }
+    input, select, textarea, button {
+        font-size: 14px;
     }
 }
