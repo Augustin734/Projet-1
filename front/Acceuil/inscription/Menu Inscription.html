@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="inscription.css.css">
+    <link rel="stylesheet" href="inscription.css">
+     <script src="inscription.js"></script>
     <link rel="stylesheet" href="../../JB/jb.css">
 </head>
 <body>
@@ -110,8 +111,12 @@ pattern="[0-9]{10,14}">
 <br><br>
 
   </div>
-<button type="submit">Submit</button>
- <form action="../../JB/jb.html"></form>
+<<button id="submit">Submit</button>
+  <script>
+    document.getElementById("submit").addEventListener("click", function() {
+      window.location.replace("../../JB/jb.html");
+    });
+  </script>
   </form>
   </center>
  <br> <br>  <center><a href="../../JB/jb.html" class="formation-link">Back to Home Page</a></center>
