@@ -7,3 +7,5 @@ const some_error = (err, req, res, next) => {
         
     });
 };
+
+export default error;
