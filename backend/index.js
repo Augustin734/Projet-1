@@ -35,3 +35,21 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Serveur lancé sur http://localhost:${port}`);
 });
+
+// récupérer tous les utilisateurs 
+
+app.get("./users", async (req, res) =>{
+  try{
+    const result = await pool.query("SELECT id, name, message From users");
+    if (result.rows.lenngth === 0) return res.send("no user find.");
+        
+    //Créé un texte regroupant tout les message
+    const messages = result.rows.map(u => '${u.name} dit : ${u.message}.join();
+      res.send(messages))
+  }catch (err){
+    console.error(err);
+    res.status(500).send ("Error server");
+  }
+});
+
+
