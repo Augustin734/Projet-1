@@ -1,5 +1,7 @@
 import express from 'express';
 import pkg from 'pg';
+import user from "./user.js";
+
 const { Pool } = pkg;
 
 // Configuration de la connexion PostgreSQL
@@ -17,7 +19,7 @@ const port = 3000;
  
 // Middleware pour parser le JSON
 app.use(express.json());
-app.use(cors);
+app.use(cors());
 
 // Vérification de la connexion à PostgreSQL
 pool.connect()
