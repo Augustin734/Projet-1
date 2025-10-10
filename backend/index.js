@@ -1,15 +1,7 @@
-// index.js
 import express from 'express';
 import pkg from 'pg';
 const { Pool } = pkg;
 
-// Création de l'application Express
-const app = express();
-const port = 3000;
- 
-// Middleware pour parser le JSON
-app.use(express.json());
- 
 // Configuration de la connexion PostgreSQL
 const pool = new Pool({
   host: 'db',
@@ -18,9 +10,14 @@ const pool = new Pool({
   password: 'devpass',
   database: 'devdb'
 });
+
+// Création de l'application Express
+const app = express();
+const port = 3000;
  
 // Middleware pour parser le JSON
 app.use(express.json());
+app.use(cors);
 
 // Vérification de la connexion à PostgreSQL
 pool.connect()
@@ -38,17 +35,19 @@ app.listen(port, () => {
 
 // récupérer tous les utilisateurs 
 
-app.get("./users", async (req, res) =>{
-  try{
-    const result = await pool.query("SELECT id, name, message From users");
-    if (result.rows.lenngth === 0) return res.send("no user find.");
-        
-    //Créé un texte regroupant tout les message
-    const messages = result.rows.map(u => '${u.name} dit : ${u.message}.join();
-      res.send(messages))
-  }catch (err){
+app.get("/users", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT id, name, message FROM users");
+
+    if (result.rows.length === 0) return res.send("No users found.");
+
+    // Créer un texte regroupant tous les messages
+    // const messages = result.rows.map(u => `${u.name} dit : ${u.message}`);
+    // res.send(messages.join('\n'));
+
+  } catch (err) {
     console.error(err);
-    res.status(500).send ("Error server");
+    res.status(500).send("Server error");
   }
 });
 
