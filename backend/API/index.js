@@ -42,6 +42,9 @@ app.use("./api", user);
             // Error
 app.use (some_error);
 
+            //create table before starting server
+createUserTable();
+
             // récupérer tous les utilisateurs 
 
 app.get("/users", async (req, res) => {

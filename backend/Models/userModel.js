@@ -1,4 +1,4 @@
-import pool from "../config/db";
+import pool from "../config/db.js";
 
 export const getalluserService = async () => {
     const result = await pool.query ("SELECT * FROM users");
@@ -21,6 +21,7 @@ export const updateuserbyidService = async (id, username, name, phone_number, ma
 };
 
 export const deleteuserbyidService = async () => {
-    const result = await pool.query ("SELECT * FROM users");
-    return result ;
+    const result = await pool.query ("DELETE FROM user WHERE id =$1 return *",
+        [id]);
+    return result.rows[0] ;
 };
