@@ -1,5 +1,6 @@
-/* Ce dossier est a copier dans vos containers en local */  
-/* Pour qu'on ai tous les même tables et columns avec quelques exemple communs de data */
+/* Ce dossier est la base de donné que postgressql aura par défault au démarrage */  
+/* En cas de changement, il faut d'abord faire dans le terminal : docker compose down -v */
+/* puis : docker compose up -d --build */
 
 
 CREATE TABLE candidature ( 
@@ -40,7 +41,7 @@ CREATE TABLE job (
     date_de_postulation DATE NOT NULL, 
     descriptif TEXT NOT NULL );
 
-/* === TABLE : candidature === */
+
 INSERT INTO candidature (id, nom, lettre_motivation, status_candidature, date_de_postulation) VALUES
 (1, 'Dupont', 'Je suis motivé à rejoindre votre entreprise.', 'En attente', '2025-09-01'),
 (2, 'Martin', 'Je suis intéressé par ce poste.', 'Acceptée', '2025-08-25'),
@@ -54,7 +55,6 @@ INSERT INTO candidature (id, nom, lettre_motivation, status_candidature, date_de
 (10, 'Laurent', 'Très motivé pour rejoindre l’équipe.', 'En cours', '2025-09-18');
 
 
-/* === TABLE : d_e === */
 INSERT INTO d_e (id, prénom, nom, phone_number, mail, adresse, ville, prétention_salariale) VALUES
 (1, 'Alice', 'Dupont', 0612345678, 'alice.dupont@mail.com', '12 rue Victor Hugo', 'Paris', 35000),
 (2, 'Benoit', 'Martin', 0698456721, 'benoit.martin@mail.com', '24 avenue de Lyon', 'Lyon', 42000),
@@ -68,7 +68,6 @@ INSERT INTO d_e (id, prénom, nom, phone_number, mail, adresse, ville, prétenti
 (10, 'Julien', 'Laurent', 0723456987, 'julien.laurent@mail.com', '11 rue des Fleurs', 'Strasbourg', 38000);
 
 
-/* === TABLE : employeur === */
 INSERT INTO employeur (id, nom, siret, secteur_activité, siège_social, site_web, descriptif) VALUES
 (1, 'TechNova', 123456789, 'Informatique', 'Paris', 'https://www.technova.fr', 'Entreprise de solutions logicielles.'),
 (2, 'GreenWorld', 234567891, 'Environnement', 'Lyon', 'https://www.greenworld.fr', 'Entreprise éco-responsable.'),
@@ -82,7 +81,6 @@ INSERT INTO employeur (id, nom, siret, secteur_activité, siège_social, site_we
 (10, 'CreativAgency', 923456789, 'Marketing', 'Paris', 'https://www.creativagency.fr', 'Agence de communication créative.');
 
 
-/* === TABLE : job === */
 INSERT INTO job (id, nom_entreprise, nom_job, type_de_contrat, secteur_activité, salaire, ville, adresse, date_de_postulation, descriptif) VALUES
 (1, 'TechNova', 'Développeur Web', 'CDI', 'Informatique', 42000, 'Paris', '12 rue du Code', '2025-09-10', 'Développement d’applications web.'),
 (2, 'GreenWorld', 'Chargé de mission environnement', 'CDD', 'Environnement', 35000, 'Lyon', '8 avenue Verte', '2025-09-05', 'Gestion de projets écologiques.'),
