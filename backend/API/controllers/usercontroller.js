@@ -9,7 +9,7 @@ const handleResponse =(res, status, message, data = null ) => {
 }
 
 export const createUser =async (req, res, next) => {
-    const {firstname, name, phone_number, mail, adress, city, salary_claim} = req.body;
+    const {prénom, name, phone_number, mail, adresse, ville, prétention_salariale} = req.body;
     try{
         const newuser = await createUserService(firstname, name, phone_number, mail, adress, city, salary_claim);
         handleResponse (res,201, "successfully", newuser)

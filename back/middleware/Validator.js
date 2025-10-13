@@ -1,13 +1,13 @@
 import Joi from "joi";
 
 const userSchema = Joi.object({
-    fisrtname : Joi.string().min(3).required(),
-    name : Joi.string().min(3).required(),
+    prénom : Joi.string().min(3).required(),
+    nom : Joi.string().min(3).required(),
     email : Joi.string().min(3).email().required(),
     phone_number: Joi.string().pattern(/^\d{10}$/).required(),
-    address : Joi.string().min(3).required(),
-    city : Joi.string().min(3).required(),
-    salary_claim: Joi.number().precision(2).min(5).max(1000000).required()
+    addresse : Joi.string().min(3).required(),
+    ville : Joi.string().min(3).required(),
+    pretention_salarial: Joi.number().precision(2).min(5).max(1000000).required()
 
 });
 

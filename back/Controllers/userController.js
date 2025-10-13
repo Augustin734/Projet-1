@@ -37,7 +37,7 @@ export const getuser = async (req, res, next) => {
 export const createUser = async (req, res, next) => {
     const {name, email } = req.body;
     try {
-        const newUser = await createuserbyidService(name, email);
+        const newUser = await createuserbyidService(prénom, nom, phone_number, mail, adresse, ville, prétention_salariale);
         handleResponse(res, 200, "User created successfully", newUser)
     } catch (err) {
         next(err);
@@ -47,7 +47,7 @@ export const createUser = async (req, res, next) => {
 export const updateuser = async (req, res, next) => {
     const {name, email} = req.body
     try {
-        const updateduser = await updateuserbyidService(req.params.id, name, email);
+        const updateduser = await updateuserbyidService(req.params.id, prénom, nom, phone_number, mail, adresse, ville, prétention_salariale);
         if(!updateduseruser) return handleResponse(res, 404, "User not found")
         handleResponse(res, 201, "User updated successfully", updateduser)
     } catch (error) {

@@ -1,8 +1,8 @@
 import express from "express ";
 import {createUser, getAllUser, getUserById, updateUser, deleteUser} from "../controllers/useController.js"
-import validationUser from "../middleware/Validator.js";
+import validationUser from "../../back/middleware/Validator.js";
 
-const router = express.router();
+const router = express.Router();
 
 
 router.post ("./user",validationUser, createUser);
