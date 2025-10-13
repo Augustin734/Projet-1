@@ -16,8 +16,8 @@ services:
     networks:
       - devnet
 
-  backend:
-    build: .
+  back:
+    build: ./back
     container_name: node_backend
     depends_on:
       - db
@@ -31,11 +31,11 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - ./back:/app    
+      - /app/node_modules             
     networks:
       - devnet
-    command: npm start
+    command: sh -c "npm install && npm run dev"
 
   pgadmin:
     image: dpage/pgadmin4
