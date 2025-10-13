@@ -15,7 +15,8 @@ CREATE TABLE d_e (
     prénom VARCHAR(50) NOT NULL, 
     nom VARCHAR(50) NOT NULL, 
     phone_number BIGINT, 
-    mail VARCHAR(150), 
+    mail VARCHAR(150),
+    password VARCHAR(150), 
     adresse TEXT, 
     ville VARCHAR(50), 
     prétention_salariale INTEGER ); 
@@ -23,7 +24,9 @@ CREATE TABLE d_e (
 CREATE TABLE employeur ( 
     id BIGINT NOT NULL PRIMARY KEY, 
     nom VARCHAR(200) NOT NULL, 
-    siret INTEGER NOT NULL, 
+    siret INTEGER NOT NULL,
+    mail VARCHAR(150),
+    password VARCHAR, 
     secteur_activité VARCHAR(150), 
     siège_social TEXT, 
     site_web TEXT, 
@@ -55,30 +58,32 @@ INSERT INTO candidature (id, nom, lettre_motivation, status_candidature, date_de
 (10, 'Laurent', 'Très motivé pour rejoindre l’équipe.', 'En cours', '2025-09-18');
 
 
-INSERT INTO d_e (id, prénom, nom, phone_number, mail, adresse, ville, prétention_salariale) VALUES
-(1, 'Alice', 'Dupont', 0612345678, 'alice.dupont@mail.com', '12 rue Victor Hugo', 'Paris', 35000),
-(2, 'Benoit', 'Martin', 0698456721, 'benoit.martin@mail.com', '24 avenue de Lyon', 'Lyon', 42000),
-(3, 'Claire', 'Bernard', 0789456123, 'claire.bernard@mail.com', '8 rue de Bretagne', 'Rennes', 32000),
-(4, 'David', 'Durand', 0654789541, 'david.durand@mail.com', '10 boulevard Pasteur', 'Marseille', 39000),
-(5, 'Emma', 'Petit', 0756123498, 'emma.petit@mail.com', '5 rue Lafayette', 'Lille', 37000),
-(6, 'François', 'Robert', 0687456123, 'francois.robert@mail.com', '20 avenue du Prado', 'Nice', 40000),
-(7, 'Géraldine', 'Richard', 0712345987, 'geraldine.richard@mail.com', '14 rue Nationale', 'Bordeaux', 33000),
-(8, 'Hugo', 'Moreau', 0765894123, 'hugo.moreau@mail.com', '3 place de la République', 'Toulouse', 41000),
-(9, 'Isabelle', 'Simon', 0645789132, 'isabelle.simon@mail.com', '7 rue Voltaire', 'Nantes', 36000),
-(10, 'Julien', 'Laurent', 0723456987, 'julien.laurent@mail.com', '11 rue des Fleurs', 'Strasbourg', 38000);
+INSERT INTO d_e (id, prénom, nom, phone_number, mail, password, adresse, ville, prétention_salariale) VALUES
+(1, 'Lucas', 'Martin', 0612457896, 'lucas.martin@example.com', 'pass1234', '12 rue des Lilas', 'Lyon', 32000),
+(2, 'Emma', 'Dubois', 0654789632, 'emma.dubois@example.com', 'emmaPwd98', '45 avenue Victor Hugo', 'Paris', 40000),
+(3, 'Noah', 'Bernard', 0678945123, 'noah.bernard@example.com', 'noahSecure22', '8 impasse des Roses', 'Marseille', 28000),
+(4, 'Chloé', 'Lefèvre', 0698754123, 'chloe.lefevre@example.com', 'Chloe!2024', '10 rue des Acacias', 'Toulouse', 35000),
+(5, 'Nathan', 'Roux', 0612987456, 'nathan.roux@example.com', 'RouxN@th', '55 boulevard Carnot', 'Bordeaux', 30000),
+(6, 'Manon', 'Moreau', 0654781596, 'manon.moreau@example.com', 'Manon2025', '14 rue du Général Leclerc', 'Nantes', 37000),
+(7, 'Louis', 'Girard', 0632547896, 'louis.girard@example.com', 'LgSecure#1', '27 avenue de Bretagne', 'Lille', 42000),
+(8, 'Camille', 'Faure', 0678124596, 'camille.faure@example.com', 'Camille@123', '3 rue du Lac', 'Strasbourg', 31000),
+(9, 'Jules', 'Chevalier', 0696325478, 'jules.chevalier@example.com', 'JulesPwd77', '9 rue de la Liberté', 'Rennes', 29500),
+(10, 'Léa', 'Lambert', 0614789523, 'lea.lambert@example.com', 'Lambert!lea', '2 rue du Soleil', 'Nice', 34000);
 
 
-INSERT INTO employeur (id, nom, siret, secteur_activité, siège_social, site_web, descriptif) VALUES
-(1, 'TechNova', 123456789, 'Informatique', 'Paris', 'https://www.technova.fr', 'Entreprise de solutions logicielles.'),
-(2, 'GreenWorld', 234567891, 'Environnement', 'Lyon', 'https://www.greenworld.fr', 'Entreprise éco-responsable.'),
-(3, 'BuildCo', 345678912, 'BTP', 'Marseille', 'https://www.buildco.fr', 'Société de construction innovante.'),
-(4, 'EduPlus', 456789123, 'Éducation', 'Bordeaux', 'https://www.eduplus.fr', 'Formations et e-learning.'),
-(5, 'Foodies', 567891234, 'Agroalimentaire', 'Rennes', 'https://www.foodies.fr', 'Produits bio et locaux.'),
-(6, 'TravelX', 678912345, 'Tourisme', 'Nice', 'https://www.travelx.fr', 'Agence de voyage moderne.'),
-(7, 'Meditech', 789123456, 'Santé', 'Toulouse', 'https://www.meditech.fr', 'Technologies médicales avancées.'),
-(8, 'AutoLine', 891234567, 'Automobile', 'Lille', 'https://www.autoline.fr', 'Fabrication de pièces automobiles.'),
-(9, 'Financia', 912345678, 'Banque', 'Strasbourg', 'https://www.financia.fr', 'Services financiers personnalisés.'),
-(10, 'CreativAgency', 923456789, 'Marketing', 'Paris', 'https://www.creativagency.fr', 'Agence de communication créative.');
+
+INSERT INTO employeur (id, nom, siret, mail, password, secteur_activité, siège_social, site_web, descriptif) VALUES
+(1, 'TechNova', 825647391, 'contact@technova.fr', 'Tech#2024', 'Informatique', '45 rue de la République, Lyon', 'https://www.technova.fr', 'Société spécialisée dans le développement de logiciels sur mesure.'),
+(2, 'BâtirPlus', 925874163, 'contact@batirplus.fr', 'Batir@2025', 'BTP', '12 avenue du Général de Gaulle, Paris', 'https://www.batirplus.fr', 'Entreprise de construction et de rénovation durable.'),
+(3, 'GreenFood', 758496123, 'contact@greenfood.fr', 'Green!89', 'Agroalimentaire', '8 rue des Platanes, Toulouse', 'https://www.greenfood.fr', 'Production et distribution de produits bio locaux.'),
+(4, 'MediCare', 635978214, 'rh@medicare.fr', 'MediCare2023', 'Santé', '22 boulevard Saint-Michel, Marseille', 'https://www.medicare.fr', 'Clinique privée offrant des services médicaux innovants.'),
+(5, 'AutoDrive', 984652137, 'contact@autodrive.fr', 'Drive!24', 'Automobile', '55 rue du Stade, Lille', 'https://www.autodrive.fr', 'Fabricant de véhicules électriques nouvelle génération.'),
+(6, 'ImmoFrance', 856941732, 'info@immofrance.fr', 'Immo#2025', 'Immobilier', '10 avenue de la Liberté, Bordeaux', 'https://www.immofrance.fr', 'Agence immobilière spécialisée dans le logement éco-responsable.'),
+(7, 'EduPlus', 715489632, 'contact@eduplus.fr', 'Edu2025@', 'Éducation', '34 rue Pasteur, Nantes', 'https://www.eduplus.fr', 'Plateforme d’apprentissage en ligne pour étudiants et professionnels.'),
+(8, 'BlueSea', 639874512, 'hr@bluesea.fr', 'BlueSea@44', 'Tourisme', '25 rue du Port, Nice', 'https://www.bluesea.fr', 'Agence de voyages spécialisée dans le tourisme durable.'),
+(9, 'DataLink', 892145637, 'info@datalink.fr', 'Data#Link2024', 'Technologie', '7 rue de l Innovation, Grenoble', 'https://www.datalink.fr', 'Fournisseur de solutions cloud et d’analyse de données.'),
+(10, 'CleanCity', 784596231, 'contact@cleancity.fr', 'CleanCity!25', 'Environnement', '3 boulevard des Fleurs, Strasbourg', 'https://www.cleancity.fr', 'Entreprise spécialisée dans la gestion et le recyclage des déchets urbains.');
+
 
 
 INSERT INTO job (id, nom_entreprise, nom_job, type_de_contrat, secteur_activité, salaire, ville, adresse, date_de_postulation, descriptif) VALUES
