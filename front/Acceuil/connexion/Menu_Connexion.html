@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Connexion Page</title>
     <script src="Menu Connexion.js"></script>
-    <link rel="stylesheet" href="../inscription/inscription.css.css">
+    <link rel="stylesheet" href="../../front/Acceuil/inscription/inscription.css">
     <link rel="stylesheet" href="menu-connexion.css">
 </head>
 <body>
@@ -28,8 +28,14 @@
        title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">
        <br><br>    
 
-    <button type="submit">Submit</button>
-    <form action="../../JB/jb.html"></form>
+    <button id="submitBtn">Submit</button>
+
+  <script>
+    document.getElementById("submitBtn").addEventListener("click", function() {
+      window.location.replace("../../JB/jb.html");
+    });
+  </script>
+
     
   </form></center>
 <br><center><a href="../inscription/Menu%20Inscription.html">Sign up</a></center>

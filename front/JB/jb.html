@@ -4,24 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Board</title>
+  <link rel="stylesheet" href="jb.css">
   <header class="items-center justify-between">
-    <center><h1>Job Board</h1></center>
-<nav class="navbar">
+    <link rel="stylesheet" href="Easy Job.png">
+    <center><h1>Easy Job</h1></center>
+  <nav class="navbar">
   <div class="nav-brand">
+    <div id="mySidenav" class="sidenav">
+       
+    
     <ul class="nav-links">
-      <li><a href="../Acceuil/connexion/Menu_Connexion.html">Connexion</a></li>
-      <li><a href="../Acceuil/inscription/Menu%20Inscription.html">Inscription</a></li>
-      <li><a href="../Acceuil/Update/update.html">Modifier le profil</a></li>
-      <li><a href="../Acceuil/Annoce/annoce.html">Déposer une annonce</a></li>
+      <a id="closeBtn" href="#" class="close">x</a>
+      <li><a href="../../front/Acceuil/connexion/Menu_Connexion.html">Connexion</a></li>
+      <li><a href="../../front/Acceuil/inscription/Menu%20Inscription.html">Inscription</a></li>
+      <li><a href="../../front/Acceuil/Update/update.html">Modifier le profil</a></li>
+      <li><a href="../../front/Acceuil/Annoce/annoce.html">Déposer une annonce</a></li>
     </ul>
-  </div>
-</nav>
-  <script src="jb1.js"></script>
+    </div>
+    <a href="#" id="openBtn">
+        <span class="burger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </a>
+    </div>
+  </nav>
 </head>
-<body>
-   <link rel="stylesheet" href="jb.css">
+<body> 
   <main class="container">
-<section id="JobAdverts">
+<center><section id="JobAdverts">
   <h2>Job adverts</h2>
   <div class="timeline">
 
@@ -110,11 +122,12 @@
     </div>
 
 
-</section>
+</section></center>
 <br>
  <footer>
-    <p>© 2025 - GRP14 - Tous droits réservés</p>
+    <center><p>© 2025 - GRP14 - Tous droits réservés</p></center>
   </footer>
   </main>
+  <script src="jb1.js"></script>
 </body>
 </html>

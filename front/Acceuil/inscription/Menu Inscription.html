@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="inscription.css.css">
+    <link rel="stylesheet" href="inscription.css">
+     <script src="inscription.js"></script>
     <link rel="stylesheet" href="../../JB/jb.css">
 </head>
 <body>
@@ -35,7 +36,9 @@
 <input type="number" id="age" min="16" max="99" required><br><br>
 
 <label>Phone:</label>
-<input type="text" minlength="10" maxlength="14" required>
+<input type="text" minlength="10" maxlength="14" required
+pattern="[0-9]{10,14}">
+<br><br>
 
 <label>Password:</label>
     <input type="password" required
@@ -79,7 +82,7 @@ pattern="[0-9]{10,14}">
         <option value="Privée">Privée</option>
         </select><br><br>
 <label>Address:</label>
-<input type="text" <br><br>
+<input type="text"<br><br>
 
     <label for="titre">Job title</label>
     <input type="text" id="titre" name="titre" required><br><br>
@@ -110,8 +113,12 @@ pattern="[0-9]{10,14}">
 <br><br>
 
   </div>
-<button type="submit">Submit</button>
- <form action="../../JB/jb.html"></form>
+<button id="submit">Submit</button>
+  <script>
+    document.getElementById("submit").addEventListener("click", function() {
+      window.location.replace("../../JB/jb.html");
+    });
+  </script>
   </form>
   </center>
  <br> <br>  <center><a href="../../JB/jb.html" class="formation-link">Back to Home Page</a></center>
