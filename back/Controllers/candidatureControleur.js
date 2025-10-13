@@ -1,10 +1,10 @@
 import { 
-    getAllUserService, 
-    getUserByIdService, 
-    createUserByIdService, 
-    updateUserByIdService, 
-    deleteUserByIdService
-} from "../Models/userModel.js";
+    getAllCandidatureService, 
+    getCandidatureByIdService, 
+    createCandidatureByIdService, 
+    updateCandidatureByIdService, 
+    deleteCandidatureByIdService
+} from "../Models/candidatureModel.js";
 
 // Standardized repsonse function
 const handleResponse = (res, status, message, data = null) => {
@@ -17,49 +17,49 @@ const handleResponse = (res, status, message, data = null) => {
 
 export const getAllCandidature = async (req, res, next) => {
     try {
-        const allusers = await getAllUserService();
-        handleResponse(res, 201, "Users fetched successfully", allusers)
+        const allCandidature = await getAllCandidatureService();
+        handleResponse(res, 200, "Candidatures fetched successfully", allCandidature)
     } catch (error) {
         next(err);
     }
 }
 
-export const getUser = async (req, res, next) => {
+export const getCandidature = async (req, res, next) => {
     try {
-        const user = await getUserByIdService(req.params.id);
-        if(!user) return handleResponse(res, 404, "User not found")
-        handleResponse(res, 200, "User fetched successfully", user)
+        const candidature = await getCandidatureByIdService(req.params.id);
+        if(!candidature) return handleResponse(res, 404, "Candidature not found")
+        handleResponse(res, 200, "Candidature fetched successfully", candidature)
     } catch (error) {
         next(err);
     }
 }
 
-export const createUser = async (req, res, next) => {
-    const {name, email } = req.body;
+export const createCandidature = async (req, res, next) => {
+    const {nom, lettre_motivation, status_candidature, date_de_postulation} = req.body;
     try {
-        const newUser = await createUserByIdService(name, email);
-        handleResponse(res, 200, "User created successfully", newUser)
+        const newCandidature = await createCandidatureByIdService(nom, lettre_motivation, status_candidature, date_de_postulation);
+        handleResponse(res, 200, "Candidature created successfully", newCandidature)
     } catch (err) {
         next(err);
     }
 }
 
-export const updateUser = async (req, res, next) => {
-    const {name, email} = req.body
+export const updateCandidature = async (req, res, next) => {
+    const {nom, lettre_motivation, status_candidature, date_de_postulation} = req.body
     try {
-        const updateduser = await updateUserByIdService(req.params.id, name, email);
-        if(!updateduseruser) return handleResponse(res, 404, "User not found")
-        handleResponse(res, 201, "User updated successfully", updateduser)
+        const updatedcandidature = await updateCandidatureByIdService(req.params.id, nom, lettre_motivation, status_candidature, date_de_postulation);
+        if(!updatedcandidature) return handleResponse(res, 404, "Candidature not found")
+        handleResponse(res, 200, "Candidature updated successfully", updatedcandidature)
     } catch (error) {
         next(err);
     }
 }
 
-export const deleteUser = async (req, res, next) => {
+export const deleteCandidature = async (req, res, next) => {
     try {
-        const deleteduser = await deleteUserByIdService(req.params.id);
-        if(!deleteduseruser) return handleResponse(res, 404, "User not found")
-        handleResponse(res, 200, "User deleted successfully", deleteduser)
+        const deletedCandidature = await deleteCandidatureByIdService(req.params.id);
+        if(!deletedCandidature) return handleResponse(res, 404, "Candidature not found")
+        handleResponse(res, 200, "Candidature deleted successfully", deletedCandidature)
     } catch (error) {
         next(err);
     }
