@@ -9,9 +9,9 @@ const handleResponse =(res, status, message, data = null ) => {
 }
 
 export const createUser =async (req, res, next) => {
-    const {username, name, phone_number, mail, adress, city, salary_claim} = req.body;
+    const {firstname, name, phone_number, mail, adress, city, salary_claim} = req.body;
     try{
-        const newuser = await createUserService(username, name, phone_number, mail, adress, city, salary_claim);
+        const newuser = await createUserService(firstname, name, phone_number, mail, adress, city, salary_claim);
         handleResponse (res,201, "successfully", newuser)
     }catch (err){
         next(err);
@@ -38,10 +38,10 @@ export const getUserById =async (req, res, next) => {
 };
 
 export const updateUser =async (req, res, next) => {
-  const {username, name, phone_number, mail, adress, city, salary_claim} = req.body;  
+  const {firstname, name, phone_number, mail, adress, city, salary_claim} = req.body;  
     try{
-        const updateUser = await updateUserService(req.params.id, username, name, phone_number, mail, adress, city, salary_claim);
-        if(!user) return handleResponse (404, "User not found");
+        const updateUser = await updateUserService(req.params.id, firstnamename, name, phone_number, mail, adress, city, salary_claim);
+        if(!updateUser) return handleResponse (404, "User not found");
         handleResponse (res,200, "successfully", updateUser)
     }catch (err){
         next(err);
@@ -50,8 +50,8 @@ export const updateUser =async (req, res, next) => {
 
 export const deleteUser =async (req, res, next) => {
     try{
-        const deleteUser = await deleteUserService(req.params.id, username, name, phone_number, mail, adress, city, salary_claim);
-        if(!user) return handleResponse (404, "User not found");
+        const deleteUser = await deleteUserService(req.params.id, firstnamename, name, phone_number, mail, adress, city, salary_claim);
+        if(!deleteUser) return handleResponse (404, "User not found");
         handleResponse (res,200, "successfully", deleteUser)
     }catch (err){
         next(err);
