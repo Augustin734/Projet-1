@@ -2,6 +2,7 @@ import express from 'express';
 import cors from "cors";
 import user from "./Routes/user.js";
 import some_error from './middleware/error.js';
+import pool from './Config/db.js';
 
 
 // Création de l'application Express, et vérification postgresql
@@ -23,6 +24,9 @@ pool.connect()
 app.use(express.json());
 app.use(cors());
 
+
+// Liaison au front
+app.use(express.static('front/JB/jb.html'))
 
 // way
 app.use("/api", user);

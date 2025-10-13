@@ -1,4 +1,4 @@
-import pool from "../config/db.js";
+import pool from "../Config/db.js";
 
 export const getAllUserService = async () => {
   const result = await pool.query("SELECT * FROM d_e");
@@ -10,7 +10,7 @@ export const getUserByIdService = async (id) => {
   return result.rows[0];
 };
 
-export const createUserService = async (
+export const createUserByIdService = async (
   prénom,
   nom,
   phone_number,

@@ -4,10 +4,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
+
   "dependencies": {
     "express": "^4.19.2",
-    "pg": "^8.11.5"
+    "pg": "^8.11.5",
+    "cors": "^2.8.5",
+    "joi": "^17.9.2"
   }
 }
