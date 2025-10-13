@@ -14,71 +14,121 @@
     list-style: none;
     font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-header {
-    height : 100vh;
-    width: 100vw;
-    background-image: url(test.jpg);
-    background-size: cover;
-    
-}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #CF998C;
-    color: rgb(255, 255, 255);
-    padding: 1rem 2rem;
-    font-family: Arial, sans-serif;
+/* Pour le menu de navigation */
+.menu {
+    width: 100%;
 }
-
-.navbar-brand a {
-    color: white;
-    text-decoration: none;
-    font-size: 5rem;
-    font-weight: bold;
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
 }
-
-.navbar-links {
-    display: flex;
-    list-style: none;
+nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    
 }
-
-.navbar-links li {
-    margin-left: 1.5rem;
+nav li {
+    flex: 1;
+    text-align: center;
 }
-
-.navbar-links a {
-    color: white !important;
+nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+nav a {
+    display: block;
     text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
+    color: black;
+    border-bottom: 2px solid transparent; 
+    padding: 10px 0;
+    transition: 0.3s;
 }
-
-.navbar-links a:hover {
-    color: white; /* Reste blanc au survol */
-    text-decoration: underline; /* Optionnel : soulignement au survol */
+nav a:hover {
+    color: orange;
+    border-bottom: 2px solid orange;
 }
-
-
-.navbar-links a:active {
-    color: white; /* Blanc pendant le clic */
+@media (max-width: 768px) {
+    nav ul {
+        justify-content: center; 
+        gap: 10px;
+    }
+    nav li {
+        flex: unset;
+    }
 }
 
 @media screen and (max-width: 900px) {
-    .nav-bar .menu-hamburger {
-        display: block;
-    }
+    /* jb.css */
+.sidenav{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: #e8e8e8;
+    padding-top: 60px;
+    transform: translateY(-100%);
+    transition: top 0.4s ease;
 
-    .nav-bar .nav-links ul {
-        display: flex;
-  } 
+}
+/* Sidenav menu links*/
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.sidenav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Active class*/
+.sidenav.active {
+    left: 0;
+}
+
+/* Close btn*/
+.sidenav.close {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+/* Icône burger */
+.burger-icon span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
 }
 .timeline-content {
   position: relative;
-  z-index: 1; /* Toujours au-dessus de la barre jaune */
+  z-index: 0; 
   background: #0000FF ;
   color: #fff;
   padding: 20px;
@@ -87,22 +137,16 @@ header {
   width: 60%; /* Largeur des rectangles */
   text-align: left;
 }
-.Learn-more {
-  background-color: #ffcc00;
-  color: #000;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-}
-.Learn-more:hover {
-  background-color: #e6b800;
-}
 
 .timeline-item.show {
   opacity: 1;
   transform: translateY(0);
+}
+@media screen and (min-width: 900px){
+    .sidenav.close,
+    .closeBtn,
+    [class*="close"],
+    button[aria-label="Close"]{
+        display: none !important;
+    }
 }
