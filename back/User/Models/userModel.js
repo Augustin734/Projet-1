@@ -20,10 +20,10 @@ export const createUserByIdService = async (
   prétention_salariale
 ) => {
   const result = await pool.query(
-    `INSERT INTO d_e (prénom, nom, phone_number, mail, adresse, ville, prétention_salariale)
+    `INSERT INTO d_e (prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password)
      VALUES ($1, $2, $3, $4, $5, $6, $7)
      RETURNING *`,
-    [prénom, nom, phone_number, mail, adresse, ville, prétention_salariale]
+    [prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password]
   );
   return result.rows[0];
 };
@@ -40,10 +40,10 @@ export const updateUserByIdService = async (
 ) => {
   const result = await pool.query(
     `UPDATE d_e
-     SET prénom = $1, nom = $2, phone_number = $3, mail = $4, adresse = $5, ville = $6, prétention_salariale = $7
-     WHERE id = $8
+     SET prénom = $1, nom = $2, phone_number = $3, mail = $4, adresse = $5, ville = $6, prétention_salariale = $7, password =$8
+     WHERE id = $9
      RETURNING *`,
-    [prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, id]
+    [prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password, id]
   );
   return result.rows[0];
 };
