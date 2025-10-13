@@ -1,7 +1,7 @@
 import { 
     getAllUserService, 
     getUserByIdService, 
-    createUserByIdService, 
+    createUserService, 
     updateUserByIdService, 
     deleteUserByIdService
 } from "../User/Models/userModel.js";
@@ -17,8 +17,8 @@ const handleResponse = (res, status, message, data = null) => {
 
 export const getAllUser = async (req, res, next) => {
     try {
-        const allusers = await getAllUserService();
-        handleResponse(res, 200, "Users fetched successfully", allusers)
+        const allUsers = await getAllUserService();
+        handleResponse(res, 200, "Users fetched successfully", allUsers)
     } catch (error) {
         next(error);
     }
@@ -26,9 +26,9 @@ export const getAllUser = async (req, res, next) => {
 
 export const getUser = async (req, res, next) => {
     try {
-        const user = await getUserByIdService(req.params.id);
-        if(!user) return handleResponse(res, 404, "User not found")
-        handleResponse(res, 200, "User fetched successfully", user)
+        const User = await getUserByIdService(req.params.id);
+        if(!User) return handleResponse(res, 404, "User not found")
+        handleResponse(res, 200, "User fetched successfully", User)
     } catch (error) {
         next(error);
     }
@@ -37,7 +37,7 @@ export const getUser = async (req, res, next) => {
 export const createUser = async (req, res, next) => {
     const {prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password} = req.body;
     try {
-        const newUser = await createUserByIdService(name, email);
+        const newUser = await createUserService({prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password});
         handleResponse(res, 201, "User created successfully", newUser)
     } catch (error) {
         next(error);
@@ -47,9 +47,9 @@ export const createUser = async (req, res, next) => {
 export const updateUser = async (req, res, next) => {
     const {prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password} = req.body
     try {
-        const updateduser = await updateUserByIdService(req.params.id, name, email);
-        if(!updateduseruser) return handleResponse(res, 404, "User not found")
-        handleResponse(res, 201, "User updated successfully", updateduser)
+        const updatedUser = await updateUserByIdService(req.params.id,{ prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password});
+        if(!updatedUser) return handleResponse(res, 404, "User not found")
+        handleResponse(res, 200, "User updated successfully", updatedUser)
     } catch (error) {
         next(error);
     }
@@ -57,9 +57,9 @@ export const updateUser = async (req, res, next) => {
 
 export const deleteUser = async (req, res, next) => {
     try {
-        const deleteduser = await deleteUserByIdService(req.params.id);
-        if(!deleteduseruser) return handleResponse(res, 404, "User not found")
-        handleResponse(res, 200, "User deleted successfully", deleteduser)
+        const deletedUser = await deleteUserByIdService(req.params.id);
+        if(!deletedUser) return handleResponse(res, 404, "User not found")
+        handleResponse(res, 200, "User deleted successfully", deletedUser)
     } catch (error) {
         next(error);
     }
