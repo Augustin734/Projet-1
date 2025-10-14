@@ -15,7 +15,7 @@
         
 <h1>Sign Up</h1>
 <label>Fonction:</label>
-<input type="radio" id="jobseeker" name="role" checked> Job seeker
+<input type="radio" id="jobseeker" name="role" checked> Demandeur d'emploie
 <input type="radio" id="employer" name="role"> Employer
 <br><br>
 
@@ -23,10 +23,10 @@
 
 <div class="jobseeker-section">
 
-  <label>Name:</label>
+  <label>Nom:</label>
 
   <input type="text" required><br><br>
-<label>First-Name:</label>
+<label>Prenom:</label>
 <input type="text" required><br><br>
 
 <label>Email:</label>
@@ -35,12 +35,12 @@
 <label>Age:</label>
 <input type="number" id="age" min="16" max="99" required><br><br>
 
-<label>Phone:</label>
+<label>Téléphone:</label>
 <input type="text" minlength="10" maxlength="14" required
 pattern="[0-9]{10,14}">
 <br><br>
 
-<label>Password:</label>
+<label>Mot de passe:</label>
     <input type="password" required
     minlength="8"
        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
@@ -51,10 +51,10 @@ pattern="[0-9]{10,14}">
            
 <div class="employer-section">
 
-  <label>Name:</label>
+  <label>Nom:</label>
 <input type="text" required><br><br>
 
-<label>First-Name:</label>
+<label>Prenom:</label>
 <input type="text" required><br><br>
 
 <label>Email:</label>
@@ -63,15 +63,15 @@ pattern="[0-9]{10,14}">
 <label>Age:</label>
 <input type="number" id="age" min="16" max="99" required><br><br>
 
-<label>Phone:</label>
+<label>Telephone:</label>
 <input type="text" minlength="10" maxlength="14" required
 pattern="[0-9]{10,14}">
 <br><br>
 
-<label for="entreprise">Company name</label>
+<label for="entreprise">Nom d'entreprise</label>
 <input type="text" id="entreprise" name="entreprise" required><br><br>
     
-<label>Siret number:</label>
+<label>Numero de siret:</label>
     <input type="text" minlength="14" maxlength="14" required><br><br>
 
     <label>Secteur d'activité</label>
@@ -81,10 +81,10 @@ pattern="[0-9]{10,14}">
         <option value="Public">Public</option>
         <option value="Privée">Privée</option>
         </select><br><br>
-<label>Address:</label>
+<label>Adresse:</label>
 <input type="text"<br><br>
 
-    <label for="titre">Job title</label>
+    <label for="titre">Nom du job</label>
     <input type="text" id="titre" name="titre" required><br><br>
 
     <label>Descriptif</label><br>
@@ -93,7 +93,7 @@ pattern="[0-9]{10,14}">
     <label for="lieu">Localisation</label>
     <input type="text" id="lieu" name="lieu" required><br><br>
 
-    <label for="type">Contract type</label>
+    <label for="type">Type de contrat</label>
     <select id="type" name="type">
         <option value="CDI">CDI</option>
         <option value="CDD">CDD</option>
@@ -105,7 +105,7 @@ pattern="[0-9]{10,14}">
   <label for="email">Contact email</label>
   <input type="email" id="email" name="email" required><br><br>
 
-<label>Password:</label>
+<label>Mot de passe:</label>
     <input type="password" id="password" required 
        minlength="8"
        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
@@ -113,7 +113,7 @@ pattern="[0-9]{10,14}">
 <br><br>
 
   </div>
-<button id="submit">Submit</button>
+<button id="submit">Soumettre</button>
   <script>
     document.getElementById("submit").addEventListener("click", function() {
       window.location.replace("../../JB/jb.html");
@@ -121,7 +121,7 @@ pattern="[0-9]{10,14}">
   </script>
   </form>
   </center>
- <br> <br>  <center><a href="../../JB/jb.html" class="formation-link">Back to Home Page</a></center>
+ <br> <br>  <center><a href="../../JB/jb.html" class="formation-link">Retour à la page d'accueil</a></center>
   </main>
 </body>
 </html>
