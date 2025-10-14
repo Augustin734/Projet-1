@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Connexion Page</title>
-  </head>
-  
-  <body>
-    <form id="formAnnonce">
-      <h1>Connexion</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion Page</title>
+    <script src="js/connexion.js"></script>
+    <img src="images/logo.jpeg" alt="Logo Easy Job" class="logo">
+    <link rel="stylesheet" href="css/connexion.css">
+</head>
 
-      <label>Name:</label>
-      <input type="text" required><br><br>
+<body>
+  <form id="formAnnonce">
+    <h1>Connexion</h1>
 
-      <label>First-Name:</label>
-      <input type="text" required><br><br>
+    <label>Nom:</label>
+    <input type="text" required><br><br>
 
-      <label>Email:</label>
-      <input type="email" required><br><br>
+    <label>Prenom:</label>
+    <input type="text" required><br><br>
 
-      <label>Password:</label>
-      <input type="password" requiredminlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">
+    <label>Email:</label>
+    <input type="email" required><br><br>
 
-      <button type="submit">Submit</button>
-      <form action="jb.html"></form>    
-    </form>
-    <a href="inscription.html">Sign up</a>
-    <a href="jb.html" class="formation-link">Back to Home Page</a>
-  </body>
+    <label>Mot de Passe:</label>
+    <input type="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">   
+
+    <button id="submitBtn">Soumettre</button>
+  </form>
+
+  <a href="inscription.html">S'inscrire</a>
+  <a href="jb.html" class="formation-link">Retour à la page d'accueil</a>
+</body>
+
+<script>
+  document.getElementById("submitBtn").addEventListener("click", function() {
+    window.location.replace("jb.html");
+  });
+</script>
 </html>

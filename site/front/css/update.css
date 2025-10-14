@@ -3,26 +3,40 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
+    background-color: #00A6CB;
+    color: #333;
 }
 
-/* Masquer les sections par défaut */
-.jobseeker-section,
-.employer-section {
-    display: none;
-    padding: 20px;
-    background-color: #f0f0f0;
-    margin-top: 20px;
-    border-radius: 5px;
+
+.container {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Afficher la section selon le radio coché */
-#jobseeker:checked ~ .jobseeker-section {
-    display: block;
+a {
+    color: black;
+    text-decoration: none;
 }
 
-#employer:checked ~ .employer-section {
-    display: block;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1px;
 }
+
+.logo {
+  width: 90px;
+  height: auto;
+  vertical-align: right;
+  border-radius: 8%;
+  position: absolute;
+  right: 865px;
+}
+
+
+
 
 .form-group {
     margin-bottom: 15px;

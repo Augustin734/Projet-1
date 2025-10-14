@@ -4,58 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier le Profil</title>
-    <script src="update.js"></script>
-    <link rel="stylesheet" href="update.css">
+    <script src="js/update.js"></script>
+    <link rel="stylesheet" href="css/update.css">
+    <img src="images/logo.jpeg" alt="Logo Easy Job" class="logo">
 </head>
-<center><body>
+<body>
     <h1>Modifier le Profil</h1>
     <p>Mettez à jour vos informations personnelles</p>
 
-    <div>
-        
+    <div>       
         <p>JD</p>
         <button>Changer la photo</button>
     </div>
-<br>
+
+    <br>
+
     <form>
         <div>
             <label for="firstName">Prénom</label>
             <input type="text" id="firstName" name="firstName"  required>
             <button type="button">Modifier</button>
         </div>
-<br>
+
+        <br>
+
         <div>
             <label for="lastName">Nom</label>
             <input type="text" id="lastName" name="lastName"  required>
             <button type="button">Modifier</button>
         </div>
-<br>
+
+        <br>
+
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email"  required>
+            <input type="text" placeholder="Nouvelle adresse e-mail" required>
             <button type="button">Modifier</button>
-
         </div>
-<br>
+
+        <br>
+
         <div>
             <label for="phone">Téléphone</label>
             <input type="tel" id="phone" name="phone"  required>
             <button type="button">Modifier</button>
-
         </div>
-<br>
+
+        <br>
+
         <div>
             <label for="bio">Biographie</label>
             <textarea id="bio" name="bio" placeholder="Parlez-nous de vous..."></textarea>
             <button type="button">Modifier</button>
         </div>
-<br>
+
+        <br>
+
         <div>
             <button type="submit">Enregistrer</button>
             <button type="button">Annuler</button>
         </div>
-    </form>
-    <br> <br> <center><a href="../../JB/jb.html" class="formation-link">Back to Home Page</a></center>
 
-</body></center>
+        <div>
+            <button type="button">Supprimer le compte</button>
+        </div>
+    </form>
+    <a href="jb.html" class="formation-link">Retour à la page d'accueil</a>
+
+</body>
 </html>
