@@ -1,4 +1,3 @@
-
         const form = document.getElementById('profileForm');
         const message = document.getElementById('message');
         const avatar = document.getElementById('avatar');

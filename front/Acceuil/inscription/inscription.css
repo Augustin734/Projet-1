@@ -1,38 +1,38 @@
-/* ----- Structure générale ----- */
 body {
     font-family: Arial, sans-serif;
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #e0cf5f;
     color: #333;
 }
 
-/* Conteneur principal */
+
 .container {
-    background: #fff;
+    background: #1976d2;
     padding: 25px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 80px;
+    box-shadow: 5px 10px 15px rgba(0,0,0,1.3);
 }
 
-/* ----- Liens ----- */
+
 a {
-    color: #007bff;
+    color: black;
     text-decoration: none;
+    
 }
 a:hover {
     text-decoration: underline;
 }
 
-/* ----- Titres ----- */
+
 h1 {
     text-align: center;
     margin-bottom: 25px;
     color: #222;
 }
 
-/* ----- Gestion des sections ----- */
+
 .jobseeker-section,
 .employer-section {
     display: none;
@@ -42,7 +42,7 @@ h1 {
     border-radius: 5px;
 }
 
-/* Afficher la section selon le radio coché */
+
 #jobseeker:checked ~ .jobseeker-section {
     display: block;
 }
@@ -51,7 +51,7 @@ h1 {
     display: block;
 }
 
-/* ----- Champs de formulaire ----- */
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -77,13 +77,13 @@ textarea {
     font-size: 14px;
 }
 
-/* Radios */
+
 input[type="radio"] {
     width: auto;
     margin-right: 5px;
 }
 
-/* ----- Bouton ----- */
+
 button {
     display: block;
     width: 100%;
@@ -100,14 +100,14 @@ button:hover {
     background-color: #45a049;
 }
 
-/* ----- Liens secondaires ----- */
+
 .formation-link {
     display: inline-block;
     margin-top: 15px;
     font-size: 14px;
 }
 
-/* ----- Responsive design ----- */
+
 @media (max-width: 812px) {
     body {
         margin: 20px;
@@ -120,3 +120,19 @@ button:hover {
         font-size: 14px;
     }
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+  vertical-align: right;
+  border-radius: 35%;
+  position: absolute;
+  right: 880px;
+}
+

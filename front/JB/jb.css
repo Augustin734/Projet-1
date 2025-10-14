@@ -24,23 +24,10 @@
 }
 
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 1px;
-}
-
-.logo {
-  width: 90px;
-  height: auto;
-  vertical-align: middle;
-}
-
-
 
 
 .header h1 {
-  font-size: 1.2rem; /* plus petit que la version précédente */
+  font-size: 2.6em; 
   margin: 0;
 }
 
@@ -82,6 +69,7 @@
 .menu {
     width: 100%;
 }
+
 nav {
     width: 100%;
     margin: 0 auto;
@@ -90,6 +78,7 @@ nav {
     top: 0;
     z-index: 1000; 
 }
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -98,38 +87,48 @@ nav ul {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    
 }
+
 nav li {
     flex: 1;
     text-align: center;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  vertical-align: right;
+  right: 90px;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+
+}
+
 nav ul::after {
     content: "";
     display: table;
     clear: both;
 }
+
 nav a {
     display: block;
     text-decoration: none;
     color: black;
+    font-size: 2em;
     border-bottom: 2px solid transparent; 
-    padding: 10px 0;
+    padding: 10px 25px;
     transition: 0.3s;
 }
+
 nav a:hover {
     color: orange;
     border-bottom: 2px solid orange;
 }
-@media (max-width: 768px) {
-    nav ul {
-        justify-content: center; 
-        gap: 10px;
-    }
-    nav li {
-        flex: unset;
-    }
-}
+
+
 
 @media screen and (max-width: 900px) {
     /* jb.css */
@@ -194,9 +193,20 @@ margin-left: 50px;
   background: #0000FF ;
   color: #fff;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 5px 5px 0px #ffffff;
-  width: 60%; /* Largeur des rectangles */
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: 7px 7px 7px #000;
+  width: 60%; 
+  text-align: left;
+}
+.timeline-content {
+  background: #0000FF;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 7px 7px 7px #000;
+  width: 30%; 
+  min-width: 250px;
   text-align: left;
 }
 
