@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "joi": "^18.0.1",
+    "nodemon": "^3.1.10"
+  }
+}

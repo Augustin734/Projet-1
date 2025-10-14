@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from "cors";
 import user from "./User/Routes/user.js";
-import some_error from './User/middleware/error.js';
+import some_error from './middleware/error.js';
 import pool from './User/Config/db.js';
 
 

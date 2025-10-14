@@ -10,6 +10,11 @@ export const getjobBySecteurActivitéService = async (secteur_activité) => {
   return result.rows;
 };
 
+export const getjobByVilleService = async (ville) => {
+  const result = await pool.query("SELECT * FROM job WHERE ville = $1", [ville]);
+  return result.rows;
+};
+
 export const createJobByIdService = async (
    nom_entreprise, 
     nom_job , 
