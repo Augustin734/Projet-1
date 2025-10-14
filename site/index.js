@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'front')));
 
 // Route principale → Menu_Connexion.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'front', 'Menu_Connexion.html'));
+  res.sendFile(path.join(__dirname, 'front', 'connexion.html'));
 });
 
 // Routes API
@@ -34,9 +34,9 @@ app.use(some_error);
 // Lancement du serveur uniquement après connexion PostgreSQL
 pool.connect()
   .then(() => {
-    console.log('✅ Connecté à PostgreSQL');
+    console.log('Connecté à PostgreSQL');
     app.listen(port, () => {
-      console.log(`🚀 Serveur lancé sur http://localhost:${port}`);
+      console.log(`Serveur lancé sur http://localhost:${port}`);
     });
   })
-  .catch(err => console.error('❌ Erreur de connexion à PostgreSQL :', err));
+  .catch(err => console.error('Erreur de connexion à PostgreSQL :', err));
