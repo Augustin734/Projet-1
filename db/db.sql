@@ -26,7 +26,7 @@ CREATE TABLE employeur (
     nom VARCHAR(200) NOT NULL, 
     siret INTEGER NOT NULL,
     mail VARCHAR(150),
-    password VARCHAR, 
+    password VARCHAR(150), 
     secteur_activité VARCHAR(150), 
     siège_social TEXT, 
     site_web TEXT, 

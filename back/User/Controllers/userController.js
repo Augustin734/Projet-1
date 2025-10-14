@@ -37,7 +37,11 @@ export const getUser = async (req, res, next) => {
 export const createUser = async (req, res, next) => {
     const {name, email } = req.body;
     try {
+<<<<<<< HEAD:back/Controllers/userController.js
+        const newUser = await createuserbyidService(prénom, nom, phone_number, mail, adresse, ville, prétention_salariale);
+=======
         const newUser = await createUserByIdService(name, email);
+>>>>>>> main:back/User/Controllers/userController.js
         handleResponse(res, 200, "User created successfully", newUser)
     } catch (err) {
         next(err);
@@ -47,7 +51,11 @@ export const createUser = async (req, res, next) => {
 export const updateUser = async (req, res, next) => {
     const {name, email} = req.body
     try {
+<<<<<<< HEAD:back/Controllers/userController.js
+        const updateduser = await updateuserbyidService(req.params.id, prénom, nom, phone_number, mail, adresse, ville, prétention_salariale);
+=======
         const updateduser = await updateUserByIdService(req.params.id, name, email);
+>>>>>>> main:back/User/Controllers/userController.js
         if(!updateduseruser) return handleResponse(res, 404, "User not found")
         handleResponse(res, 201, "User updated successfully", updateduser)
     } catch (error) {
