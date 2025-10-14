@@ -4,7 +4,7 @@ import {
     createUserService, 
     updateUserByIdService, 
     deleteUserByIdService
-} from "../User/Models/userModel.js";
+} from "../Models/userModel.js";
 
 // Standardized repsonse function
 const handleResponse = (res, status, message, data = null) => {
