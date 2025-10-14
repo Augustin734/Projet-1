@@ -209,6 +209,35 @@ margin-left: 50px;
   min-width: 250px;
   text-align: left;
 }
+p{
+  font-size: 1.5em;
+}
+h3{
+  font-size: 1.5em;
+}
+.timeline-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;     
+  align-items: stretch;        
+  gap: 20px;                   
+  padding: 20px;
+}
+
+.timeline-content {
+  background: #0000FF;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 7px 7px 7px #000;
+  width: 400px;
+  min-width: 250px;
+  min-height: 250px;
+  text-align: left;
+  display: flex;               
+  flex-direction: column;
+  justify-content: space-between; 
+}
 
 .timeline-item.show {
   opacity: 1;
