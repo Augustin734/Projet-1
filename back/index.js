@@ -2,10 +2,10 @@ import express from 'express';
 import cors from "cors";
 import user from "./API/Routes/user.js";
 import some_error from './API/middleware/error.js';
-import pool from './API/Config/db.js';
+import pool from './API/Config/db.js'; // le tableau demandeurs d'emploie
 import pool from './API/Config/db.js'; // le tableau pour le job
-import pool from './API/Config/db.js';  // le tableau pour employeur
-import pool from './API/Config/db.js';  // le tableau candidature 
+import pool from './API/Config/db.js'; // le tableau pour employeur
+import pool from './API/Config/db.js'; // le tableau candidature 
 
 
 // Création de l'application Express, et vérification postgresql
