@@ -29,6 +29,7 @@ services:
       - /app/node_modules
     networks:
       - devnet
+    command: ["./wait-for.sh", "db", "npm", "run", "dev"]
 
   pgadmin:
     build: ./pgadmin
