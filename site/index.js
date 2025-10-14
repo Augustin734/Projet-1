@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import user from './User/Routes/user.js';
-import some_error from './User/middleware/error.js';
-import pool from './User/Config/db.js';
+import user from './API/Routes/user.js';
+import some_error from './API/middleware/error.js';
+import pool from './API/Config/db.js';
 
 // Récupération correcte de __dirname avec ES Modules
 const __filename = fileURLToPath(import.meta.url);

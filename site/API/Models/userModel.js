@@ -10,18 +10,19 @@ export const getUserByIdService = async (id) => {
   return result.rows[0];
 };
 
-export const createUserByIdService = async (
+export const createUserService = async (
   prénom,
   nom,
   phone_number,
   mail,
   adresse,
   ville,
-  prétention_salariale
+  prétention_salariale,
+  password
 ) => {
   const result = await pool.query(
     `INSERT INTO d_e (prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password)
-     VALUES ($1, $2, $3, $4, $5, $6, $7)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
      RETURNING *`,
     [prénom, nom, phone_number, mail, adresse, ville, prétention_salariale, password]
   );
