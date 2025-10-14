@@ -2,17 +2,12 @@ version: '3.9'
 
 services:
   db:
-    image: postgres:16
+    build: ./db
     container_name: postgres_db
-    environment:
-      POSTGRES_USER: devuser
-      POSTGRES_PASSWORD: devpass
-      POSTGRES_DB: devdb
     ports:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./db.sql:/docker-entrypoint-initdb.d/db.sql:ro
     networks:
       - devnet
 
@@ -27,28 +22,23 @@ services:
       DB_USER: devuser
       DB_PASSWORD: devpass
       DB_NAME: devdb
-      PORT: 3000
     ports:
       - "3000:3000"
     volumes:
-      - ./back:/app    
-      - /app/node_modules             
+      - ./back:/app
+      - /app/node_modules
     networks:
       - devnet
-    command: sh -c "npm install && npm run dev"
 
   pgadmin:
-    image: dpage/pgadmin4
+    build: ./pgadmin
     container_name: pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: augustin.viemont@epitech.eu
-      PGADMIN_DEFAULT_PASSWORD: viemont
+    depends_on:
+      - db
     ports:
       - "5050:80"
     networks:
       - devnet
-    depends_on:
-      - db
 
 volumes:
   db_data:
