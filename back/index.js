@@ -26,7 +26,9 @@ app.use(cors());
 
 
 // Liaison au front
-app.use(express.static('front/JB/jb.html'))
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'front/Menu_Connexion.html'));
+});
 
 // way
 app.use("/api", user);
