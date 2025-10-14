@@ -1,5 +1,5 @@
 import express from "express";
-import validationUser from "../Validator/validate.js";
+import validationUser from "../Validator/userValidate.js";
 import { createUser, deleteUser, getAllUser, getUser, updateUser } from "../Controllers/userController.js";
 
 const router = express.Router();
