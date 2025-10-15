@@ -1,7 +1,3 @@
-const express = require("express");
-const app = express();
-app. 
-
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".learnmore");
 
@@ -36,20 +32,41 @@ function dlm(event) {
   timelineContent.appendChild(newDiv);
 }
 
-var sidenav = document.getElementById("mySidenav");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
+document.addEventListener("DOMContentLoaded", function() {
+  const openBtn = document.getElementById("openBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const sidenav = document.getElementById("mySidenav");
+  const navlinks = document.querySelectorAll(".sidenav a[href^='#']");
 
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  sidenav.classList.add("active");
-}
+  openBtn.onclick = function() {
+    sidenav.classList.add("active");
+  };
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  sidenav.classList.remove("active");
-}
+ 
+  closeBtn.onclick = function() {
+    sidenav.classList.remove("active");
+  };
+
   
+  navLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      
+      e.preventDefault();
+
+      
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      
+      sidenav.classList.remove("active");
+
+      
+      setTimeout(() => {
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); 
+    });
+  });
+});

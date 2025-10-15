@@ -39,7 +39,7 @@ h1 {
     padding: 20px;
     background-color: #f0f0f0;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 
@@ -119,6 +119,7 @@ button:hover {
     input, select, textarea, button {
         font-size: 14px;
     }
+    
 }
 
 .logo-container {
@@ -128,11 +129,12 @@ button:hover {
 }
 
 .logo {
+  position: absolute;
   width: 90px;
   height: auto;
   vertical-align: right;
   border-radius: 35%;
-  position: absolute;
-  right: 880px;
+  right: 460px;
+  
 }
 

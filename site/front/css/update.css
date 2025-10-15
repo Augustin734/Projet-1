@@ -32,10 +32,18 @@ a {
   vertical-align: right;
   border-radius: 8%;
   position: absolute;
-  right: 865px;
+  right: 460px;
 }
 
+div {
+    text-align: center;
+}
 
+a {
+    display: block;
+    text-align: center;
+    margin: 10px 0 ;
+}
 
 
 .form-group {

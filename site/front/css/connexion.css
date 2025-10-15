@@ -109,3 +109,9 @@ button:hover {
   position: absolute;
   right: 865px;
 }
+
+a {
+    display: block;
+    text-align: center;
+    margin: 10px 0 ;
+}
