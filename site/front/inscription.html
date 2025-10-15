@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="inscription.css.css">
+  <script src="js/inscription.js"></script>
+  <link rel="stylesheet" href="css/inscription.css">
+</head>
+
+<body>
+  <a href="connexion.html" class="formation-link">Back</a>
+  <img src="images/logo.jpeg" alt="Logo Easy Job" class="logo">
+
+  <form id="formAnnonce">
+      
+    <h1>Sign Up</h1>
+    <label>Fonction:</label>
+    <input type="radio" id="jobseeker" name="role" checked> Job seeker
+    <input type="radio" id="employer" name="role"> Employer
+
+
+          
+
+    <div class="jobseeker-section">
+      <label>Name:</label>
+      <input type="text" required>
+
+      <label>First-Name:</label>
+      <input type="text" required>
+
+      <label>Email:</label>
+      <input type="email" required>
+      <label>Age:</label>
+      <input type="number" id="age" min="16" max="99" required>
+
+      <label>Phone:</label>
+      <input type="text" minlength="10" maxlength="14" required>
+
+      <label>Password:</label>
+      <input type="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">
+    </div>
+              
+    <div class="employer-section">
+      <label>Name:</label>
+      <input type="text" required>
+
+      <label>First-Name:</label>
+      <input type="text" required>
+
+      <label>Email:</label>
+      <input type="email" required>
+      
+      <label>Age:</label>
+      <input type="number" id="age" min="16" max="99" required>
+
+      <label>Phone:</label>
+      <input type="text" minlength="10" maxlength="14" required pattern="[0-9]{10,14}">
+
+      <label for="entreprise">Company name</label>
+      <input type="text" id="entreprise" name="entreprise" required>
+
+      <label>Siret number:</label>
+      <input type="text" minlength="14" maxlength="14" required>
+
+      <label>Secteur d'activité</label>
+      <select id="type" name="type">
+        <option value="Informatique">Informatique</option>
+        <option value="Électronique">Électronique</option>
+        <option value="Public">Public</option>
+        <option value="Privée">Privée</option>
+      </select>
+
+      <label>Address:</label>
+      <input type="text">
+
+      <label for="titre">Job title</label>
+      <input type="text" id="titre" name="titre" required>
+
+      <label>Descriptif</label>
+      <textarea style="width: 547px; height:84px;" maxlength="300"></textarea>
+
+      <label for="lieu">Localisation</label>
+      <input type="text" id="lieu" name="lieu" required>
+
+      <label for="type">Contract type</label>
+      <select id="type" name="type">
+        <option value="CDI">CDI</option>
+        <option value="CDD">CDD</option>
+        <option value="Freelance">Freelance</option>
+        <option value="Alternance">Alternance</option>
+        <option value="Stage">Stage</option>
+      </select>
+
+      <label for="email">Contact email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label>Password:</label>
+      <input type="password" id="password" required minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Le mot de passe doit contenir au moins 8 caractères, incluant une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)">  
+    </div>
+  </form>
+
+  <button type="submit">Submit</button>
+  <a href="jb.html" class="formation-link">Back to Home Page</a>
+</body>
+
+<script>
+  document.getElementById("submit").addEventListener("click", function() {
+    window.location.replace("jb.html");
+  });
+</script>
+
+</html>
