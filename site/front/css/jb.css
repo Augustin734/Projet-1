@@ -209,10 +209,11 @@ nav a:hover {
 .timeline-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 20px;
+  justify-content: flex-start;
+  gap: 20px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0  auto;
 }
 
 .timeline-content .w32 {
@@ -222,6 +223,7 @@ nav a:hover {
   border-radius: 20px;
   box-shadow: 7px 7px 7px #000;
   width: 30%;
+  flex: 0 0 calc(33.333% - 20px);
   min-width: 250px;
   min-height: 250px;
   text-align: left;
@@ -244,7 +246,7 @@ h3{
   justify-content: center;     
   align-items: stretch;        
   gap: 20px;                   
-  padding: 20px;
+  padding: 40px;
 }
 
 .timeline-content {
@@ -280,5 +282,8 @@ h1 {
 }
 
 h2 {
+  text-align: center;
+}
+footer {
   text-align: center;
 }
