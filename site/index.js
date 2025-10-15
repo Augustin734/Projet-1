@@ -5,6 +5,9 @@ import { fileURLToPath } from 'url';
 import user from './API/Routes/user.js';
 import some_error from './API/middleware/error.js';
 import pool from './API/Config/db.js';
+import candidature from './API/Routes/candidature.js';
+import employeur from './API/Routes/employeur.js';
+import job from './API/Routes/job.js';
 
 // Récupération correcte de __dirname avec ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -25,8 +28,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'front', 'connexion.html'));
 });
 
+
 // Routes API
 app.use('/api', user);
+app.use('/api', candidature);
+app.use('/api', employeur);
+app.use('/api', job);
 
 // Middleware d’erreur
 app.use(some_error);
@@ -40,3 +47,4 @@ pool.connect()
     });
   })
   .catch(err => console.error('Erreur de connexion à PostgreSQL :', err));
+
