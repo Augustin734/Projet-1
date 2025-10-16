@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/People", {
+      const response = await fetch(("http://localhost:3000/People"), {
         method: "POST",  // Méthode HTTP POST
         headers: {
           "Content-Type": "application/json",  // Indique que les données envoyées sont en JSON
