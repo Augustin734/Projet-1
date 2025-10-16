@@ -5,9 +5,9 @@ import { createApplications, deleteApplications, getAllApplications, getApplicat
 const router = express.Router();
 
 router.get ("/Applications", getAllApplications);
-router.get ("/Applications/:id", getEmployeur);
-router.post ("/Applications", validationUser, createApplications);
-router.put ("/Applications/:id", validationUser, updateApplications);
+router.get ("/Applications/:id", getApplications);
+router.post ("/Applications", createApplications);
+router.put ("/Applications/:id", updateApplications);
 router.delete ("/Applications/:id", deleteApplications);
 
 export default router ;
