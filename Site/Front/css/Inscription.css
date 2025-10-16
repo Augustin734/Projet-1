@@ -33,23 +33,14 @@ h1 {
 }
 
 
-.jobseeker-section,
-.employer-section {
-    display: none;
-    padding: 20px;
-    background-color: #f0f0f0;
-    margin-top: 20px;
-    border-radius: 5px;
-}
+
 
 
 #jobseeker:checked ~ .jobseeker-section {
     display: block;
 }
 
-#employer:checked ~ .employer-section {
-    display: block;
-}
+
 
 
 .form-group {
@@ -78,10 +69,7 @@ textarea {
 }
 
 
-input[type="radio"] {
-    width: auto;
-    margin-right: 5px;
-}
+
 
 
 button {
