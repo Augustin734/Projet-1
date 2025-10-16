@@ -1,7 +1,7 @@
 import { 
     getAllCompaniesService, 
     getCompaniesByIdService, 
-    createCompaniesByIdService, 
+    createCompaniesService, 
     updateCompaniesByIdService, 
     deleteCompaniesByIdService
 } from "../Models/CompaniesModel.js";
@@ -37,7 +37,7 @@ export const getCompanies = async (req, res, next) => {
 export const createCompanies = async (req, res, next) => {
     const {name, siret, mail, password, business_sector, headquarters, web_site, description} = req.body;
     try {
-        const newCompanies = await createCompaniesByIdService({name, siret, mail, password, business_sector, headquarters, web_site, description});
+        const newCompanies = await createCompaniesService({name, siret, mail, password, business_sector, headquarters, web_site, description});
         handleResponse(res, 201, "Companies created successfully", newCompanies)
     } catch (error) {
         next(error);

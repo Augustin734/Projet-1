@@ -13,7 +13,7 @@ export const getAdvertisementsByBusinessSectorService = async (business_sector) 
   return result.rows;
 };
 
-export const getAdvertisementsByVilleService = async (city) => {
+export const getAdvertisementsByCityService = async (city) => {
   const result = await pool.query(
     "SELECT * FROM Advertisements WHERE city = $1",
     [city]

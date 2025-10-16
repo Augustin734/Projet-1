@@ -1,5 +1,4 @@
 import express from "express";
-import validationCompanies from "../Validator/CompaniesValidate.js";
 import { createCompanies, deleteCompanies, getAllCompanies, getCompanies, updateCompanies } from "../Controllers/CompaniesController.js";
 
 const router = express.Router();

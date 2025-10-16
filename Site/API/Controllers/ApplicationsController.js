@@ -1,7 +1,7 @@
 import { 
     getAllApplicationsService, 
     getApplicationsByIdService, 
-    createApplicationsByIdService, 
+    createApplicationsService, 
     updateApplicationsByIdService, 
     deleteApplicationsByIdService
 } from "../Models/ApplicationsModel.js";
@@ -37,7 +37,7 @@ export const getApplications = async (req, res, next) => {
 export const createApplications = async (req, res, next) => {
     const {name, mail, cover_letter, application_status} = req.body;
     try {
-        const newApplications = await createApplicationsByIdService(name, mail, cover_letter, application_status);
+        const newApplications = await createApplicationsService(name, mail, cover_letter, application_status);
         handleResponse(res, 200, "Applications created successfully", newApplications)
     } catch (err) {
         next(err);

@@ -1,5 +1,4 @@
 import express from "express";
-import validationAdvertisements from "../Validator/AdvertisementsValidate.js";
 import { createAdvertisements, deleteAdvertisements, getAllAdvertisements, updateAdvertisements, getAdvertisementsByCity, getAdvertisementsByBusinessSector } from "../Controllers/AdvertisementsController.js";
 
 const router = express.Router();
