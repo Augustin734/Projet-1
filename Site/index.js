@@ -15,10 +15,10 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, 'front')));
+app.use(express.static(path.join(__dirname, 'Front')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'front', 'connexion.html'));
+  res.sendFile(path.join(__dirname, 'Front', 'Connexion.html'));
 });
 
 app.use('/api', user);
