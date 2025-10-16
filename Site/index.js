@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import user from './API/Routes/user.js';
-import some_error from './API/middleware/error.js';
-import pool from './API/Config/db.js';
+import user from './API/Routes/People.js';
+import some_error from './API/middleware/Error.js';
+import pool from './API/Config/DataBase.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

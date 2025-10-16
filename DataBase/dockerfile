@@ -4,4 +4,4 @@ ENV POSTGRES_USER=devuser
 ENV POSTGRES_PASSWORD=devpass
 ENV POSTGRES_DB=devdb
 
-COPY db.sql /docker-entrypoint-initdb.d/
+COPY DataBase.sql /docker-entrypoint-initdb.d/

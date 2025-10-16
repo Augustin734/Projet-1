@@ -1,13 +1,13 @@
 import Joi from "joi";
 
-const userSchema = Joi.object({
-    prénom: Joi.string().min(3).required(),
-    nom: Joi.string().min(3).required(),
+const CompaniesSchema = Joi.object({
+    name: Joi.string().min(3).required(),
+    siret: Joi.string().min(3).required(),
     mail: Joi.string().email().required(),
-    phone_number: Joi.string().pattern(/^\d{10}$/).required(),
-    adresse: Joi.string().min(3).required(),
-    ville: Joi.string().min(3).required(),
-    prétention_salariale: Joi.number().precision(2).min(5).max(1000000).required(),
+    business_sector: Joi.string().min(3).required(),
+    headquarters: Joi.string().min(3).required(),
+    web_site: Joi.string().min(3).required(),
+    headquarters: Joi.string().min(3).required(),
 
     password: Joi.string()
         .min(8)
@@ -20,13 +20,13 @@ const userSchema = Joi.object({
         })
 });
 
-const validationUser =(req, res, next) => {
-    const {error} = userSchema.validate(req.body);
+const validationCompanies =(req, res, next) => {
+    const {error} = CompaniesSchema.validate(req.body,{abortEarly: false});
     if (error) return res.status(400).json({
         status: 400 ,
-        message: error.details[0].message
+        message: error.details.map(e => e.message)
     });
     next()
 };
 
-export default validationUser;
+export default validationCompanies;

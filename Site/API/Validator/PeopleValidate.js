@@ -1,13 +1,12 @@
 import Joi from "joi";
 
-const EmployeurSchema = Joi.object({
-    nom: Joi.string().min(3).required(),
-    Siret: Joi.string().min(3).required(),
+const PeopleSchema = Joi.object({
+    name: Joi.string().min(3).required(),
+    first_name: Joi.string().min(3).required(),
+    phone_number: Joi.string().pattern(/^\d{10}$/).required(),
     mail: Joi.string().email().required(),
-    site_web: Joi.string().uri().optional(),
-    secteur_activité: Joi.string().min(3).required(),
-    siège_social: Joi.string().min(3).required(),
-    descriptif: Joi.string().min(3).required(),
+    adress: Joi.string().min(3).required(),
+    city: Joi.string().min(3).required(),
 
     password: Joi.string()
         .min(8)
@@ -20,13 +19,13 @@ const EmployeurSchema = Joi.object({
         })
 });
 
-const validationEmployeur =(req, res, next) => {
-    const {error} = EmployeurSchema.validate(req.body,{abortEarly: false});
+const validationPeople =(req, res, next) => {
+    const {error} = PeopleSchema.validate(req.body);
     if (error) return res.status(400).json({
         status: 400 ,
-        message: error.details.map(e => e.message)
+        message: error.details[0].message
     });
     next()
 };
 
-export default validationEmployeur;
+export default validationPeople;
