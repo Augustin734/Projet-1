@@ -4,15 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    const first_name = document.getElementById('first_name').value;
+    const phone_number = document.getElementById('phone_number').value;
+    const mail = document.getElementById('mail').value;
     const password = document.getElementById('password').value;
-    const 
+    const adress = document.getElementById('adress').value;
+    const city = document.getElementById('city').value;
     
     try {
       const response = await fetch("http://localhost:3000/api/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({email, password }),
+        body: JSON.stringify({name, first_name, phone_number, mail, password, adress, city}),
       });
 
       const data = await response.json();
