@@ -2,8 +2,8 @@ version: '3.9'
 
 services:
   db:
-    build: ./db
-    container_name: postgres_db
+    build: ./DataBase
+    container_name: DataBase
     ports:
       - "5432:5432"
     volumes:
@@ -18,8 +18,8 @@ services:
       start_period: 10s
 
   back:
-    build: ./site
-    container_name: node_backend
+    build: ./Site
+    container_name: Site
     depends_on:
       db:
         condition: service_healthy
@@ -32,15 +32,15 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./site:/app
+      - ./Site:/app
       - /app/node_modules
     networks:
       - devnet
     command: ["npm", "run", "dev"]
 
   pgadmin:
-    build: ./pgadmin
-    container_name: pgadmin
+    build: ./Graphical_Interface 
+    container_name: Graphical_Interface 
     depends_on:
       db:
         condition: service_healthy
