@@ -36,18 +36,38 @@ export const getPeople = async (req, res, next) => {
 
 export const createPeople = async (req, res, next) => {
     const {name, first_name, phone_number, mail, password, adress, city} = req.body;
+    console.log("BODY RECU:", req.body);
     try {
-        const newPeople = await createPeopleService({name, first_name, phone_number, mail, password, adress, city});
-        handleResponse(res, 201, "People created successfully", newPeople)
+        const newPeople = await createPeopleService(
+            name,
+            first_name,
+            phone_number,
+            mail,
+            password,
+            adress,
+            city
+        );
+        handleResponse(res, 201, "People created successfully", newPeople);
     } catch (error) {
         next(error);
     }
-}
+};
+
 
 export const updatePeople = async (req, res, next) => {
     const {name, first_name, phone_number, mail, password, adress, city} = req.body
+    console.log(req.body);
     try {
-        const updatedPeople = await updatePeopleByIdService(req.params.id,{ name, first_name, phone_number, mail, password, adress, city});
+        const updatedPeople = await updatePeopleByIdService(
+            req.params.id,
+            name,
+            first_name,
+            phone_number,
+            mail,
+            password,
+            adress,
+            city
+        );
         if(!updatedPeople) return handleResponse(res, 404, "People not found")
         handleResponse(res, 200, "People updated successfully", updatedPeople)
     } catch (error) {

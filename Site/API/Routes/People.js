@@ -5,7 +5,11 @@ const router = express.Router();
 
 router.get ("/People", getAllPeople);
 router.get ("/People/:id", getPeople);
-router.post ("/People", createPeople);
+router.post("/People", (req, res, next) => {
+  console.log("🔥 Route People POST déclenchée !");
+  next();
+}, createPeople);
+
 router.put ("/People/:id", updatePeople);
 router.delete ("/People/:id", deletePeople);
 

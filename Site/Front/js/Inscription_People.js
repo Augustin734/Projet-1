@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const city = document.getElementById('city').value;
     
     try {
-      const response = await fetch("http://localhost:3000/api/user", {
+      const response = await fetch("http://localhost:3000/api/People", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({name, first_name, phone_number, mail, password, adress, city}),

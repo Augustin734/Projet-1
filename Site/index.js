@@ -15,18 +15,19 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
-app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'Front')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Front', 'Connexion.html'));
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use('/api', People);
 app.use('/api', Application);
 app.use('/api', Companies);
 app.use('/api', Advertisement);
+
+app.use(express.static(path.join(__dirname, 'Front')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Front', 'Connexion.html'));
+});
 
 app.use(some_error);
 
