@@ -19,7 +19,7 @@ CREATE TABLE d_e (
     password VARCHAR(150), 
     adresse TEXT, 
     ville VARCHAR(50), 
-    prétention_salariale INTEGER ); 
+); 
         
 CREATE TABLE employeur ( 
     id BIGINT NOT NULL PRIMARY KEY, 
