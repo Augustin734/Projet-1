@@ -4,14 +4,14 @@
 
 
 CREATE TABLE Applications ( 
-    id BIGINT NOT NULL PRIMARY KEY, 
+    id BIGSERIAL PRIMARY KEY, 
     name TEXT NOT NULL,
     mail TEXT, 
     cover_letter TEXT, 
     application_status TEXT ); 
     
 CREATE TABLE People ( 
-    id BIGINT NOT NULL PRIMARY KEY, 
+    id BIGSERIAL PRIMARY KEY, 
     name TEXT NOT NULL, 
     first_name TEXT NOT NULL, 
     phone_number TEXT, 
@@ -21,7 +21,7 @@ CREATE TABLE People (
     city TEXT ); 
         
 CREATE TABLE Companies ( 
-    id BIGINT NOT NULL PRIMARY KEY, 
+    id BIGSERIAL PRIMARY KEY, 
     name TEXT NOT NULL, 
     siret TEXT NOT NULL UNIQUE,
     mail TEXT,
@@ -32,7 +32,7 @@ CREATE TABLE Companies (
     description TEXT ); 
     
 CREATE TABLE Advertisements ( 
-    id BIGINT NOT NULL PRIMARY KEY, 
+    id BIGSERIAL PRIMARY KEY, 
     company_name TEXT NOT NULL, 
     job_name TEXT NOT NULL, 
     contract_type TEXT NOT NULL, 
@@ -42,7 +42,7 @@ CREATE TABLE Advertisements (
     adress TEXT,  
     description TEXT NOT NULL );
 
-    INSERT INTO Applications (id, name, mail, cover_letter, application_status) VALUES
+INSERT INTO Applications (id, name, mail, cover_letter, application_status) VALUES
 (1, 'Alice Dupont', 'alice.dupont@mail.com', 'I am highly motivated to join your company.', 'Pending'),
 (2, 'Marc Leroy', 'marc.leroy@mail.com', 'Looking forward to contributing to your team.', 'Accepted'),
 (3, 'Sophie Martin', 'sophie.martin@mail.com', 'With 3 years of experience, I can add value.', 'Rejected'),

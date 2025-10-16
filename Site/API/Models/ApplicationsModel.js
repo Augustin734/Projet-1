@@ -1,4 +1,4 @@
-import pool from "../config/db.js";
+import pool from "../Config/DataBase.js";
 
 export const getAllApplicationsService = async () => {
   const result = await pool.query("SELECT * FROM Applications");

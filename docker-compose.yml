@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   db:
     build: ./DataBase
@@ -29,18 +27,19 @@ services:
       DB_USER: devuser
       DB_PASSWORD: devpass
       DB_NAME: devdb
+      PORT: 3000
     ports:
       - "3000:3000"
     volumes:
-      - ./Site:/app
-      - /app/node_modules
+      - ./Site:/app        
+      - /app/node_modules 
     networks:
       - devnet
-    command: ["npm", "run", "dev"]
+    command: ["nodemon", "--legacy-watch", "index.js"] 
 
   pgadmin:
-    build: ./Graphical_Interface 
-    container_name: Graphical_Interface 
+    build: ./Graphical_Interface
+    container_name: Graphical_Interface
     depends_on:
       db:
         condition: service_healthy
