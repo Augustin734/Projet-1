@@ -35,10 +35,19 @@ export const getCompanies = async (req, res, next) => {
 }
 
 export const createCompanies = async (req, res, next) => {
-    const {name, siret, mail, password, business_sector, headquarters, web_site, description} = req.body;
+    const { name, siret, mail, password, business_sector, headquarters, web_site, description } = req.body;
     try {
-        const newCompanies = await createCompaniesService({name, siret, mail, password, business_sector, headquarters, web_site, description});
-        handleResponse(res, 201, "Companies created successfully", newCompanies)
+        const newCompany = await createCompaniesService(
+            name, 
+            siret,
+            mail, 
+            password, 
+            business_sector, 
+            headquarters, 
+            web_site, 
+            description
+        );
+        handleResponse(res, 201, "Company created successfully", newCompany);
     } catch (error) {
         next(error);
     }
@@ -47,7 +56,17 @@ export const createCompanies = async (req, res, next) => {
 export const updateCompanies = async (req, res, next) => {
     const {name, siret, mail, password, business_sector, headquarters, web_site, description} = req.body
     try {
-        const updatedCompanies = await updateCompaniesByIdService(req.params.id, name, siret, mail, password, business_sector, headquarters, web_site, description);
+        const updatedCompanies = await updateCompaniesByIdService(
+            req.params.id, 
+            name, 
+            siret, 
+            mail, 
+            password, 
+            business_sector, 
+            headquarters, 
+            web_site, 
+            description
+        );
         if(!updatedCompanies) return handleResponse(res, 404, "Companies not found")
         handleResponse(res, 200, "Companies updated successfully", updatedCompanies)
     } catch (error) {

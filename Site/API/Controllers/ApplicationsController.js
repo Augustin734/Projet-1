@@ -37,7 +37,12 @@ export const getApplications = async (req, res, next) => {
 export const createApplications = async (req, res, next) => {
     const {name, mail, cover_letter, application_status} = req.body;
     try {
-        const newApplications = await createApplicationsService(name, mail, cover_letter, application_status);
+        const newApplications = await createApplicationsService(
+            name, 
+            mail, 
+            cover_letter, 
+            application_status
+        );
         handleResponse(res, 200, "Applications created successfully", newApplications)
     } catch (err) {
         next(err);
@@ -47,7 +52,13 @@ export const createApplications = async (req, res, next) => {
 export const updateApplications = async (req, res, next) => {
     const {name, mail, cover_letter, application_status} = req.body
     try {
-        const updatedApplications = await updateApplicationsByIdService(req.params.id, name, mail, cover_letter, application_status);
+        const updatedApplications = await updateApplicationsByIdService(
+            req.params.id, 
+            name, 
+            mail, 
+            cover_letter, 
+            application_status
+        );
         if(!updatedApplications) return handleResponse(res, 404, "Applications not found")
         handleResponse(res, 200, "Applications updated successfully", updatedApplications)
     } catch (error) {

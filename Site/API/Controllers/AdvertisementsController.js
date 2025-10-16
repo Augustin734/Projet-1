@@ -48,7 +48,16 @@ export const getAdvertisementsByCity = async (req, res, next) => {
 export const createAdvertisements = async (req, res, next) => {
     const {company_name, job_name , contract_type, business_sector, salary, city, adress, description} = req.body;
     try {
-        const newAdvertisements = await createAdvertisementsService({id, company_name, job_name , contract_type, business_sector, salary, city, adress, description});
+        const newAdvertisements = await createAdvertisementsService(
+            company_name, 
+            job_name , 
+            contract_type, 
+            business_sector, 
+            salary, 
+            city, 
+            adress, 
+            description
+        );
         handleResponse(res, 201, "Advertisements created successfully", newAdvertisements)
     } catch (error) {
         next(error);
@@ -58,7 +67,17 @@ export const createAdvertisements = async (req, res, next) => {
 export const updateAdvertisements = async (req, res, next) => {
     const {id, company_name, job_name , contract_type, business_sector, salary, city, adress, description} = req.body
     try {
-        const updatedAdvertisements = await updateAdvertisementsByIdService(req.params.id,{id, company_name, job_name , contract_type, business_sector, salary, city, adress, description});
+        const updatedAdvertisements = await updateAdvertisementsByIdService(
+            req.params.id,
+            company_name, 
+            job_name , 
+            contract_type, 
+            business_sector, 
+            salary, 
+            city, 
+            adress, 
+            description
+        );
         if(!updatedAdvertisements) return handleResponse(res, 404, "User not found")
         handleResponse(res, 200, "Advertisements updated successfully", updatedAdvertisements)
     } catch (error) {
