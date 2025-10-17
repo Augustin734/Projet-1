@@ -3,24 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="/js/Advertisements_Board.js"></script>
-  <link rel="stylesheet" href="/css/Advertisements_Board.css">
+  <script src="./js/Advertisements_Board.js"></script>
+  <link rel="stylesheet" href="./css/Advertisements_Board.css">
 </head>
 
 <body>
   <header class="items-center justify-between">
     <title>Job Board</title>
-    <h1>Job Board</h1>
+    <div class="flex">
+     <img src="images/logo.jpeg" alt="Logo Easy Job" class="logo"> <h1>Job Board</h1> 
+    </div>
     <nav class="navbar">
+      <div id="mySidenav" class="sidenav">
+        <a id="closeBtn" href="#" class="close">×</a>
         <ul class="nav-links">
-          <li><a href="Connexion_People.html">Connexion People</a></li>
-          <li><a href="Connexion_Companies.html">Connexion Companies</a></li>
-          <li><a href="Inscription_Companies.html">Inscription Company</a></li>
-          <li><a href="Inscription_People.html">Inscription People</a></li>
-          <li><a href="Applications_Board.html">Applications Board</a></li>
-          <li><a href="Update_Companies.html">Update Companies Profil</a></li>
-          <li><a href="Update_People.html">Update People Profil</a></li>
+          <li><a href="Connexion_People.html">Connexion_People</a></li>
+          <li><a href="Connexion_Companies.html">Connexion_Companies</a></li>
+          <li><a href="Inscription_Companies.html">Inscription_Companies</a></li>
+          <li><a href="Inscription_People.html">Inscription_People</a></li>
+          <li><a href="Applications_Board.html">Post a job</a></li>
+          <li><a href="Update_Companies.html">Update_Companies</a></li>
+          <li><a href="Update_People.html">Update_People</a></li>
         </ul>
+      </div>
+      <a id="openBtn" href="#">
+      <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
     </nav>
   </header>
 
@@ -30,7 +42,7 @@
       <h2>Job adverts</h2>
 
       <div class="timeline">
-
+        <div class="timeline-wrapper">
           <div class="timeline-item" >
             <div class="timeline-content">
               <h3>Recherche Developper en C et en C++</h3>
@@ -44,9 +56,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Recherche Developper Web </h3>
+            <h3>Web developer wanted </h3>
             <h3>PixelForge Interactive</h3>
-            <p>Cybersécurité, Informatique, Électronique et Logiciel</p>
+            <p>Cybersecurity, IT, Electronics and Software</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -55,9 +67,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Poste de Soldat</h3>
-            <h3>Armée de Terre</h3>
-            <p>CDI en tant que soldat</p>
+            <h3>Soldier position</h3>
+            <h3>French Army</h3>
+            <p>Permanent contract as a soldier</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -66,9 +78,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Recherche Développeur Full Stack</h3>
+            <h3>Web developer wanted</h3>
             <h3>TechWave Solutions</h3>
-            <p>CDI, Télétravail partiel</p>
+            <p>Permanent contract, partial teleworking</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -77,9 +89,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Installateur de structure sportives et gazons synthétiques</h3>
+            <h3>Installer of sports facilities and artificial turf</h3>
             <h3>Golf Green City / Univers gazons</h3>
-            <p>CDD, Temps plein</p>
+            <p>Fixed-term contract, Full-time</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -88,9 +100,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Spécialiste Cybersécurité H/F</h3>
-            <h3>Armée de Terre</h3>
-            <p>À partir de 2 183 € par mois - Temps plein</p>
+            <h3>Cybersecurity Specialist</h3>
+            <h3>French Army</h3>
+            <p>Starting at €2,183 per month - Full-time</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -99,9 +111,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Installateur de structure sportives et gazons synthétiques</h3>
+            <h3>Installer of sports facilities and artificial turf</h3>
             <h3>Golf Green City / Univers gazons</h3>
-            <p>CDD, Temps plein</p>
+            <p>Fixed-term contract, Full-time</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -110,9 +122,9 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Développeur Logiciel Java Backend (F/H)</h3>
+            <h3>Java Backend Software Developer (F/M)</h3>
             <h3>Thales</h3>
-            <p>CDI, Temps plein</p>
+            <p>Permanent contract, Full-time</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
@@ -121,13 +133,13 @@
 
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Militaire Technicien des systèmes numériques armée de l'Air & de l'Espace</h3>
-            <h3>Armée de l'Air & de l'Espace</h3>
-            <p>CDI, Temps plein</p>
+            <h3>Military Technician in Digital Systems Air and Space Force</h3>
+            <h3>Air and Space Force</h3>
+            <p>Permanent contract, Full-time</p>
             <button class="learnmore">Learn more</button>
           </div>
         </div>
-
+       </div>
       </div>
 
     </section>

@@ -23,8 +23,22 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+h1 {
+  place-items: center;
+  position: top;
+  text-transform: uppercase;
+  font-size: 2.2em;
+}
 
+h2 {
+  text-align: center;
+  margin-top: 20px;
 
+}
+
+footer {
+  text-align: center;
+}
 
 .header h1 {
   font-size: 2.6em; 
@@ -102,7 +116,7 @@ nav li {
 }
 
 .logo {
-  width: 90px;
+  width: 200px;
   height: auto;
 
 }
@@ -131,9 +145,8 @@ nav a:hover {
 
 
 @media screen and (max-width: 900px) {
-    /* jb.css */
 .sidenav{
-    height: 16%;
+    height: 100%;
     width: 100%;
     position: fixed;
     z-index: 1;
@@ -250,4 +263,9 @@ h3{
     button[aria-label="Close"]{
         display: none !important;
     }
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

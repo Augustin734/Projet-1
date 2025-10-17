@@ -1,6 +1,41 @@
-const express = require("express");
-const app = express();
-app. 
+document.addEventListener("DOMContentLoaded", function() {
+  const openBtn = document.getElementById("openBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const sidenav = document.getElementById("mySidenav");
+  const navLinks = document.querySelectorAll(".sidenav a[href^='#']");
+
+
+  openBtn.onclick = function() {
+    sidenav.classList.add("active");
+  };
+
+ 
+  closeBtn.onclick = function() {
+    sidenav.classList.remove("active");
+  };
+
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+
+      sidenav.classList.remove("active");
+
+
+      setTimeout(() => {
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); 
+    });
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".learnmore");
@@ -23,33 +58,12 @@ function dlm(event) {
   newDiv.classList.add("job-details");
 
   newDiv.innerHTML = `
-      <h3>Logitech</h3>
-      <p>App designer, Technicien etc</p>
-      <p>Secteur : Informatique</p>
-      <p>Salaire : 5000€</p>
-      <p>Ville : Marseille</p>
-      <p>Adresse : 50 rue de Rome 13002</p>
-      <p>Date de postulation : 06/10/2025</p>
-      <p>Descriptif : Méchant taf la vie</p>
+      <h3>Example</h3>
+      <p>App designer<p>
+      <p>Salary : 5000€</p>
+      <p>City : Marseille</p>
+      <p>Address : 50 rue de Rome 13002</p>
   `;
 
   timelineContent.appendChild(newDiv);
 }
-
-var sidenav = document.getElementById("mySidenav");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
-
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
-
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  sidenav.classList.add("active");
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  sidenav.classList.remove("active");
-}
-  
