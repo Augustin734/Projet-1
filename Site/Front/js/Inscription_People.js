@@ -33,4 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-console.log("connexion.js")

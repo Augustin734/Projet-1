@@ -26,7 +26,7 @@ app.use('/api', Advertisement);
 
 app.use(express.static(path.join(__dirname, 'Front')));
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Front', 'Connexion.html'));
+  res.sendFile(path.join(__dirname, 'Front', 'Advertisements_Board.html'));
 });
 
 app.use(some_error);
